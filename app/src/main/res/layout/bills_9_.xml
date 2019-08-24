@@ -5,7 +5,7 @@
     android:background="@drawable/bg"
     android:padding="35sp"
     >
-    <!---->
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
     <!--::::::::::::::::::::::::::Bills:::::::::::::::::::::::::::::::::-->
     <TextView
         android:id="@+id/billstext"

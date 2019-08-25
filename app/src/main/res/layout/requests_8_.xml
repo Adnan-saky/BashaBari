@@ -1,7 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+
+    android:background="@drawable/bg"
+    android:padding="35sp">
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--::::::::::::::::::::::::::Notices:::::::::::::::::::::::::::::-->
+    <TextView
+        android:id="@+id/notice_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Requests"
+        android:textSize="60sp"
+        android:fontFamily="@font/microsoft_himalaya"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="15sp"
+        />
+
+    <!--::::::::::::::::::::::::::::::::::Arrow:::::::::::::::::::::::::::::::-->
+    <ImageView
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:src="@drawable/arrow_btn"
+        android:id="@+id/back_arrow"
+        />
+
+    <!--:::::::::::::::::::::::::::edit box::::::::::::::::::::::::::::::::-->
+    <EditText
+        android:id="@+id/edit_rq_box"
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:layout_below="@+id/notice_text2"
+        android:fontFamily="@font/futura_md_cn_bt"
+        android:hint="Sample text"
+        android:textSize="20sp"
+        android:gravity="bottom"
+        android:background="@drawable/rectangle"
+        android:padding="10sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_rq_box"
+        android:paddingLeft="10sp"
+        android:text="11/150"
+        android:textColor="@android:color/darker_gray"
+        />
+    <ImageView
+        android:id="@+id/add_rq_btn"
+        android:layout_width="150sp"
+        android:layout_height="50sp"
+        android:src="@drawable/add_notice_btn"
+        android:layout_below="@+id/edit_rq_box"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10sp"
+        android:layout_marginTop="10sp"
+        />
+
+    <!--::::::::::::::::::::::::Notice Contents:::::::::::::::::::::::::::::-->
 
 
-    <!-- a Comment  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/add_rq_btn"
+        android:padding="35sp"
+        android:orientation="vertical"
+        android:background="@drawable/rectangle"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recentreq_text"
+            android:text="Elizabeth Olsen"
+            android:fontFamily="@font/microsoft_himalaya"
+            android:textSize="30sp"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:text="My bathtub is broken please fix this ASAP"
+            android:textSize="12dp"
+            android:layout_centerHorizontal="true"
+            android:paddingBottom="15sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recentreq_text"
+            android:text="                              "
+            android:fontFamily="@font/microsoft_himalaya"
+            android:textSize="30sp"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Elizabeth Olsen"
+            android:fontFamily="@font/microsoft_himalaya"
+            android:textSize="30sp"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:text="There is no water please check it."
+            android:textSize="12dp"
+            android:layout_centerHorizontal="true"
+            android:paddingBottom="15sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recentreq_text"
+            android:text="                              "
+            android:fontFamily="@font/microsoft_himalaya"
+            android:textSize="30sp"
+            android:layout_centerHorizontal="true"/>
+
+
+
+    </LinearLayout>
 </RelativeLayout>

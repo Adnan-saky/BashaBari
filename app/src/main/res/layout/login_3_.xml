@@ -2,14 +2,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:background="@drawable/login_bg"
-    android:padding="35sp"
-    >
+    android:padding="35sp">
+
     <ImageView
+        android:id="@+id/back_arrow_btn__3"
         android:layout_width="40sp"
         android:layout_height="40sp"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="10sp"
         android:src="@drawable/arrow_btn" />
+
     <TextView
         android:id="@+id/loginTxt"
         android:layout_width="wrap_content"
@@ -32,13 +34,12 @@
         android:textSize="70sp" />
 
     <ImageView
-        android:id="@+id/nextbtn"
+        android:id="@+id/next_btn"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_below="@id/centerbox"
         android:layout_alignParentRight="true"
         android:src="@drawable/next_button" />
-
 
     <ImageView
         android:background="@drawable/register_bg"
@@ -48,7 +49,7 @@
         android:layout_below="@+id/loginTxt"
         />
 
-
+    <!--:::::::::::::::::::::::Inside Contents:::::::::::::::::::::::-->
     <LinearLayout
         android:id="@+id/login_box"
         android:layout_below="@+id/loginTxt"
@@ -66,13 +67,13 @@
          />
 
         <EditText
+            android:id="@+id/username__3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20sp"
             android:textSize="25sp"
             android:fontFamily="@font/microsoft_himalaya"
             android:hint="example"
-
             />
 
         <TextView
@@ -83,6 +84,7 @@
             android:fontFamily="@font/microsoft_himalaya"
             />
         <EditText
+            android:id="@+id/password__3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="25sp"
@@ -94,6 +96,7 @@
             />
 
         <CheckBox
+            android:id="@+id/login_as_owner__3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Login as home owner"

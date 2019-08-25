@@ -10,7 +10,7 @@
         android:layout_width="50sp"
         android:layout_height="50sp"
         android:src="@drawable/arrow_btn"
-        android:id="@+id/back_arrow"
+        android:id="@+id/back_arrow_btn"
         />
 
     <TextView
@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:text="Notices"
         android:textSize="60sp"
-        android:layout_below="@+id/back_arrow"
+        android:layout_below="@+id/back_arrow_btn"
         android:fontFamily="@font/microsoft_himalaya"
         android:layout_centerHorizontal="true"
         android:paddingBottom="15sp"

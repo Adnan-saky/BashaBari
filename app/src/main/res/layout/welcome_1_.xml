@@ -2,35 +2,32 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:background="@drawable/welcome_1_bg"
-    android:padding="35sp"
-    >
+    android:padding="35sp" >
 
     <TextView
-        android:id="@+id/Welcome"
+        android:id="@+id/Welcometxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="WELCOME"
         android:textSize="70sp"
         android:fontFamily="@font/microsoft_himalaya"
-        android:paddingTop="50sp"
+        android:paddingTop="50sp" />
 
-        />
     <TextView
         android:id="@+id/All_Info..text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/Welcome"
+        android:layout_below="@id/Welcometxt"
         android:text="All information of your residence  in one place"
         android:textSize="35sp"
-        android:fontFamily="@font/microsoft_himalaya"
-        />
+        android:fontFamily="@font/microsoft_himalaya" />
+
     <ImageView
         android:layout_width="80sp"
         android:layout_height="80sp"
         android:layout_below="@id/All_Info..text"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="450sp"
+        android:layout_marginTop="350sp"
         android:src="@drawable/next_button" />
 
 </RelativeLayout>
-    <!-- kam kore dada -->

@@ -10,60 +10,59 @@
         android:layout_width="280sp"
         android:layout_height="match_parent"
         android:background="@drawable/menu_bg"
-        android:orientation="vertical"
         android:gravity="center_horizontal"
-        >
+        android:orientation="vertical"
+        android:visibility="visible">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="MENU"
             android:fontFamily="@font/futura_md_cn_bt"
-            android:textSize="50sp"
             android:paddingTop="80sp"
             android:paddingBottom="50sp"
-            />
+            android:text="MENU"
+            android:textSize="50sp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/futura_md_bt"
+            android:padding="20sp"
             android:text="Add Tenant"
-            android:fontFamily="@font/futura_md_bt"
-            android:textSize="30sp"
-            android:padding="20sp"
             android:textColor="@android:color/holo_blue_dark"
-            />
+            android:textSize="30sp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/futura_md_bt"
+            android:padding="20sp"
             android:text="Notices"
-            android:fontFamily="@font/futura_md_bt"
-            android:textSize="30sp"
-            android:padding="20sp"
-            />
+            android:textSize="30sp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/futura_md_bt"
+            android:padding="20sp"
             android:text="Manage Tenant"
-            android:fontFamily="@font/futura_md_bt"
-            android:textSize="30sp"
-            android:padding="20sp"
-            />
+            android:textSize="30sp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/futura_md_bt"
+            android:padding="20sp"
             android:text="Send Bills"
-            android:fontFamily="@font/futura_md_bt"
-            android:textSize="30sp"
-            android:padding="20sp"
-            />
+            android:textSize="30sp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Settings"
             android:fontFamily="@font/futura_md_bt"
-            android:textSize="30sp"
             android:padding="20sp"
-            />
+            android:text="Settings"
+            android:textSize="30sp" />
 
 
     </LinearLayout>

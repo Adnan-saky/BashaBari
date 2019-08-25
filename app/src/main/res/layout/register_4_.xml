@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:background="@drawable/login_bg"
-    android:padding="35sp">
+    android:padding="35sp"
+    >
     <ImageView
         android:layout_width="40sp"
         android:layout_height="40sp"
@@ -25,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
-        android:textSize="70sp"
+        android:textSize="60sp"
         android:fontFamily="@font/microsoft_himalaya"
         android:layout_centerHorizontal="true"
         android:paddingTop="30sp"
@@ -34,15 +35,14 @@
         android:background="@drawable/register_bg"
         android:id="@+id/register_bg"
         android:layout_width="match_parent"
-        android:layout_height="440sp"
+        android:layout_height="470sp"
         android:layout_below="@+id/registerTxt"
         />
     <LinearLayout
         android:layout_below="@+id/registerTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="10sp"
-        android:paddingLeft="15sp"
+        android:padding="25sp"
 
         android:orientation="vertical"
         >
@@ -64,22 +64,22 @@
             />
 
         <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Username :"
-        android:textSize="35sp"
-        android:fontFamily="@font/microsoft_himalaya"
-        />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Username :"
+            android:textSize="35sp"
+            android:fontFamily="@font/microsoft_himalaya"
+            />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20sp"
-        android:textSize="25sp"
-        android:fontFamily="@font/microsoft_himalaya"
-        android:hint="example"
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20sp"
+            android:textSize="25sp"
+            android:fontFamily="@font/microsoft_himalaya"
+            android:hint="example"
 
-        />
+            />
 
         <TextView
             android:layout_width="match_parent"
@@ -98,23 +98,23 @@
             android:hint="example@gmail.com"
             />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Password :"
-        android:textSize="35sp"
-        android:fontFamily="@font/microsoft_himalaya"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25sp"
-        android:textSize="25sp"
-        android:fontFamily="@font/microsoft_himalaya"
-        android:inputType="textPassword"
-        android:hint="*********"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password :"
+            android:textSize="35sp"
+            android:fontFamily="@font/microsoft_himalaya"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25sp"
+            android:textSize="25sp"
+            android:fontFamily="@font/microsoft_himalaya"
+            android:inputType="textPassword"
+            android:hint="*********"
 
-        />
+            />
     </LinearLayout>
     <ImageView
         android:id="@+id/nextbtn"

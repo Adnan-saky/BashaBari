@@ -4,11 +4,11 @@
     android:background="@drawable/bg"
     android:gravity="center_horizontal"
     >
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="35sp"
-        >
+        android:padding="35sp">
         <!--::::::::::::::::::::::::::Menu Button::::::::::::::::::::::::::-->
         <ImageView
             android:id="@+id/menu_btn_image"
@@ -17,61 +17,42 @@
             android:src="@drawable/menu_btn" />
 
         <!--::::::::::::::::::::::::::Owner text:::::::::::::::::::::::::::-->
-        <TextView
-            android:id="@+id/ownertext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Owner"
-            android:textSize="20sp"
-            android:fontFamily="@font/futura_md_bt"
-            android:layout_centerHorizontal="true"
-            android:paddingBottom="20sp"
-            />
-
-        <!--:::::::::::::::::::::::::::Profile picture;:::::::::::::::::::::-->
         <ImageView
             android:id="@+id/owner_profile_pic"
-            android:layout_below="@+id/ownertext"
             android:layout_width="100sp"
             android:layout_height="100sp"
+            android:layout_below="@+id/ownertext"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/profile_pic"
-            />
+            android:src="@drawable/profile_pic" />
 
-        <!--:::::::::::::::::::::::::::::Name::::::::::::::::::::::::::::::-->
-        <TextView
-            android:id="@+id/nametext"
-            android:layout_below="@+id/owner_profile_pic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Joseph Joestar"
-            android:textSize="30sp"
-            android:fontFamily="@font/futura_md_bt"
-            android:layout_centerHorizontal="true"
-            android:paddingTop="10sp"
-            />
-
-        <!--:::::::::::::::::::::::::::::Address:::::::::::::::::::::::::::::-->
-        <TextView
-            android:id="@+id/adress_text"
-            android:layout_below="@+id/nametext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mirpur, Dhaka"
-            android:textSize="15sp"
-            android:fontFamily="@font/futura_md_bt"
-            android:layout_centerHorizontal="true"
-            android:paddingBottom="20sp"
-            />
-
-        <!--:::::::::::::::::::::::::::::info in home:::::::::::::::::::::::::::::-->
+        <!--:::::::::::::::::::::::::::Profile picture;:::::::::::::::::::::-->
         <ImageView
             android:id="@+id/info_bg"
             android:layout_width="match_parent"
             android:layout_height="100sp"
             android:layout_below="@+id/adress_text"
-            android:src="@drawable/home_info_bg"
-            />
+            android:src="@drawable/home_info_bg" />
+
+        <!--:::::::::::::::::::::::::::::Name::::::::::::::::::::::::::::::-->
+        <ImageView
+            android:id="@+id/reqst_bg"
+            android:layout_width="270dp"
+            android:layout_height="130dp"
+            android:layout_below="@+id/recentreq_text"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/rectangle" />
+
+        <!--:::::::::::::::::::::::::::::Address:::::::::::::::::::::::::::::-->
+        <ImageView
+            android:layout_width="101dp"
+            android:layout_height="39dp"
+            android:layout_below="@+id/reqst_bg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5sp"
+            android:layout_marginRight="10sp"
+            android:src="@drawable/see_more_btn" />
+
+        <!--:::::::::::::::::::::::::::::info in home:::::::::::::::::::::::::::::-->
         <LinearLayout
             android:id="@+id/info_nos"
             android:layout_width="match_parent"
@@ -79,16 +60,16 @@
             android:layout_below="@+id/adress_text"
             android:gravity="center_horizontal"
             android:paddingTop="3sp">
+
             <TextView
                 android:id="@+id/tenant_no"
                 android:layout_width="170sp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/nametext"
                 android:fontFamily="@font/microsoft_himalaya"
-                android:text="45"
-                android:textSize="40sp"
                 android:gravity="center_horizontal"
-                />
+                android:text="45"
+                android:textSize="40sp" />
 
             <TextView
                 android:id="@+id/notice_no"
@@ -107,6 +88,7 @@
             android:layout_height="55sp"
             android:layout_below="@+id/info_nos"
             android:gravity="center_horizontal">
+
             <TextView
                 android:id="@+id/tenant_text"
                 android:layout_width="170sp"
@@ -114,10 +96,10 @@
                 android:layout_below="@+id/nametext"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/futura_md_bt"
-                android:text="Tenants"
-                android:textSize="18sp"
                 android:gravity="center_horizontal"
-                />
+                android:text="Tenants"
+                android:textSize="18sp" />
+
             <TextView
                 android:id="@+id/notice_text"
                 android:layout_width="170sp"
@@ -125,61 +107,75 @@
                 android:layout_below="@+id/nametext"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/futura_md_bt"
+                android:gravity="center_horizontal"
                 android:text="Notices"
-                android:textSize="18sp"
-                android:gravity="center_horizontal"/>
+                android:textSize="18sp" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/ownertext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/futura_md_bt"
+            android:paddingBottom="20sp"
+            android:text="Owner"
+            android:textSize="20sp" />
 
         <!--:::::::::::::::::::::recent request text::::::::::::::::::::::::-->
         <TextView
-            android:id="@+id/recentreq_text"
-            android:layout_below="@+id/info_bg"
+            android:id="@+id/nametext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="RECENT REQUESTS"
-            android:textSize="28sp"
-            android:fontFamily="@font/futura_md_cn_bt"
+            android:layout_below="@+id/owner_profile_pic"
             android:layout_centerHorizontal="true"
-            android:padding="35sp"
-            />
+            android:fontFamily="@font/futura_md_bt"
+            android:paddingTop="10sp"
+            android:text="Joseph Joestar"
+            android:textSize="30sp" />
         <!--:::::::::::::::::::::request background::::::::::::::::::::::::-->
-        <ImageView
-            android:layout_width="270dp"
-            android:layout_height="130dp"
-            android:id="@+id/reqst_bg"
-            android:layout_below="@+id/recentreq_text"
+        <TextView
+            android:id="@+id/adress_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nametext"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/rectangle"/>
+            android:fontFamily="@font/futura_md_bt"
+            android:paddingBottom="20sp"
+            android:text="Mirpur, Dhaka"
+            android:textSize="15sp" />
 
-        <ImageView
-            android:layout_width="101dp"
-            android:layout_height="39dp"
-            android:layout_below="@+id/reqst_bg"
+        <TextView
+            android:id="@+id/recentreq_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/info_bg"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="5sp"
-            android:layout_marginRight="10sp"
-            android:src="@drawable/see_more_btn" />
+            android:fontFamily="@font/futura_md_cn_bt"
+            android:padding="35sp"
+            android:text="RECENT REQUESTS"
+            android:textSize="28sp" />
 
         <!--:::::::::::::::::::::request contents::::::::::::::::::::::::-->
         <TextView
+            android:id="@+id/reqst_tenant_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/reqst_tenant_name"
             android:layout_below="@+id/recentreq_text"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/microsoft_himalaya"
             android:paddingTop="15sp"
             android:text="Marie Nathalie"
-            android:fontFamily="@font/microsoft_himalaya"
-            android:textSize="30sp"
-            android:layout_centerHorizontal="true"/>
+            android:textSize="30sp" />
 
         <TextView
+            android:id="@+id/reqst_text_content"
             android:layout_width="200sp"
             android:layout_height="wrap_content"
-            android:id="@+id/reqst_text_content"
             android:layout_below="@+id/reqst_tenant_name"
+            android:layout_centerHorizontal="true"
             android:text="My shower is broken, i cant do anything. please fix asap"
-            android:textSize="12dp"
-            android:layout_centerHorizontal="true"/>
+            android:textSize="12dp" />
 
     </RelativeLayout>
 

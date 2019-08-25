@@ -1,5 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    android:padding="35sp"
+    >
+
+    <TextView
+        android:id="@+id/loginTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textSize="70sp"
+        android:fontFamily="@font/microsoft_himalaya"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="80sp"
+        />
+    <TextView
+        android:id="@+id/centerbox"
+        android:layout_width="50sp"
+        android:layout_height="500sp"
+        android:text="            "
+        android:textSize="70sp"
+        android:fontFamily="@font/microsoft_himalaya"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:paddingTop="80sp"
+        />
+    <ImageView
+        android:id="@+id/nextbtn"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_below="@id/centerbox"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/next_button" />
+
+
+    <ImageView
+        android:background="@drawable/login_bg"
+        android:id="@+id/login_bg"
+        android:layout_width="match_parent"
+        android:layout_height="300sp"
+        android:layout_below="@+id/loginTxt"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/login_box"
+        android:layout_below="@+id/loginTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10sp"
+        android:paddingLeft="15sp"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Username :"
+            android:textSize="35sp"
+            android:fontFamily="@font/microsoft_himalaya"
+         />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20sp"
+            android:textSize="25sp"
+            android:fontFamily="@font/microsoft_himalaya"
+            android:hint="example"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password :"
+            android:textSize="35sp"
+            android:fontFamily="@font/microsoft_himalaya"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25sp"
+            android:textSize="25sp"
+            android:fontFamily="@font/microsoft_himalaya"
+            android:inputType="textPassword"
+            android:hint="*********"
+
+            />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login as home owner"
+            android:textSize="25sp"
+            android:fontFamily="@font/microsoft_himalaya"
+            />
+    </LinearLayout>
+
+
 
 </RelativeLayout>

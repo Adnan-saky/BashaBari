@@ -78,14 +78,12 @@
             android:layout_height="58sp"
             android:layout_below="@+id/adress_text"
             android:gravity="center_horizontal"
-
             android:paddingTop="3sp">
             <TextView
                 android:id="@+id/tenant_no"
                 android:layout_width="170sp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/nametext"
-                android:layout_center="true"
                 android:fontFamily="@font/microsoft_himalaya"
                 android:text="45"
                 android:textSize="40sp"
@@ -97,7 +95,6 @@
                 android:layout_width="170sp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/nametext"
-                android:layout_center="true"
                 android:fontFamily="@font/microsoft_himalaya"
                 android:gravity="center_horizontal"
                 android:text="25"

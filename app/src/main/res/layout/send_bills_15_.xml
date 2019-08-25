@@ -1,5 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
 
+    android:background="@drawable/bg"
+    android:padding="35sp">
+
+    <!--:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
+    <!--::::::::::::::::::::::::::Bills:::::::::::::::::::::::::::::::::-->
+    <TextView
+        android:id="@+id/billstext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send Bills"
+        android:textSize="60sp"
+        android:fontFamily="@font/microsoft_himalaya"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="35sp"
+        />
+
+    <!--::::::::::::::::::::::::::::::::::Arrow:::::::::::::::::::::::::::::::-->
+    <ImageView
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:src="@drawable/arrow_btn"
+        android:id="@+id/back_arrow"
+        />
+
+    <!--:::::::::::::::::::::::::::::Month::::::::::::::::::::::::::::::-->
+    <TextView
+        android:id="@+id/monthtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Month:"
+        android:layout_below="@+id/billstext"
+        android:fontFamily="@font/microsoft_himalaya"
+        android:textSize="40sp"
+        android:paddingRight="35sp"
+        />
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_below="@+id/billstext"
+        android:layout_toRightOf="@+id/monthtext"
+        android:entries="@array/month_list"
+        android:spinnerMode="dropdown" />
+
+    <!--:::::::::::::::::::::::::::::::Due::::::::::::::::::::::::::-->
+    <TextView
+        android:id="@+id/duetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bill Type:"
+        android:layout_below="@+id/monthtext"
+        android:fontFamily="@font/microsoft_himalaya"
+        android:textSize="40sp"
+        android:paddingRight="35sp"/>
+    <ImageView
+        android:background="@drawable/bills_bg"
+        android:id="@+id/due_bg"
+        android:layout_width="match_parent"
+        android:layout_height="180sp"
+        android:layout_below="@+id/duetext"
+        />
+    <!--for check box-->
+    <LinearLayout
+        android:layout_below="@+id/duetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10sp"
+        android:paddingLeft="15sp"
+        android:orientation="vertical"
+        >
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rent"
+            android:textSize="25sp"
+            android:fontFamily="@font/microsoft_himalaya"
+            />
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Electricity"
+            android:textSize="25sp"
+            android:fontFamily="@font/microsoft_himalaya"
+            />
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gas"
+            android:textSize="25sp"
+            android:fontFamily="@font/microsoft_himalaya"
+            />
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Water"
+            android:textSize="25sp"
+            android:fontFamily="@font/microsoft_himalaya"
+            />
+    </LinearLayout>
+
+    <!--::::::::::::::::::::::::::::Add to paid btn::::::::::::::::::::::;:-->
+    <ImageView
+        android:layout_width="150sp"
+        android:layout_height="50sp"
+        android:layout_below="@+id/due_bg"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10sp"
+        android:layout_marginTop="10sp"
+        android:src="@drawable/send_bill_btn" />
 </RelativeLayout>

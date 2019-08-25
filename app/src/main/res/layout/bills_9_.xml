@@ -18,7 +18,7 @@
         android:paddingBottom="35sp"
         />
 
-    <!--Arrow-->
+    <!--::::::::::::::::::::::::::::::::::Arrow:::::::::::::::::::::::::::::::-->
     <ImageView
         android:layout_width="50sp"
         android:layout_height="50sp"
@@ -37,11 +37,13 @@
         android:textSize="40sp"
         android:paddingRight="35sp"
         />
+
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:layout_below="@+id/billstext"
         android:layout_toRightOf="@+id/monthtext"
+        android:clickable="false"
         android:entries="@array/month_list"
         android:spinnerMode="dropdown" />
 

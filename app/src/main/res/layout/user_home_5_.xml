@@ -16,9 +16,9 @@
         android:layout_height="35dp"
         android:src="@drawable/menu_btn" />
 
-        <!--::::::::::::::::::::::::::tenat text:::::::::::::::::::::::::::-->
+        <!--::::::::::::::::::::::::::tenant text:::::::::::::::::::::::::::-->
         <TextView
-            android:id="@+id/ownertext"
+            android:id="@+id/tenanttext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -28,10 +28,10 @@
             android:textSize="20sp" />
         <!--:::::::::::::::::::::::::::Profile picture;:::::::::::::::::::::-->
         <ImageView
-            android:id="@+id/owner_profile_pic"
+            android:id="@+id/tenant_profile_pic"
             android:layout_width="100sp"
             android:layout_height="100sp"
-            android:layout_below="@+id/ownertext"
+            android:layout_below="@+id/tenanttext"
             android:layout_centerHorizontal="true"
             android:src="@drawable/profile_pic" />
 
@@ -40,7 +40,7 @@
             android:id="@+id/nametext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/owner_profile_pic"
+            android:layout_below="@+id/tenant_profile_pic"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/futura_md_bt"
             android:paddingTop="10sp"
@@ -57,6 +57,9 @@
             android:paddingBottom="20sp"
             android:text="Mirpur, Dhaka"
             android:textSize="15sp" />
+
+        <!--:::::::::::::::::::::info box::::::::::::::::::::::::-->
+
         <ImageView
             android:id="@+id/info_bg"
             android:layout_width="match_parent"
@@ -72,7 +75,7 @@
             android:paddingTop="10sp">
 
             <TextView
-                android:id="@+id/tenant_no"
+                android:id="@+id/due_bills_no"
                 android:layout_width="170sp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/nametext"
@@ -95,14 +98,14 @@
 
 
         <LinearLayout
-            android:id="@+id/info_text"
+            android:id="@+id/due_notice_no"
             android:layout_width="match_parent"
             android:layout_height="55sp"
             android:layout_below="@+id/info_nos"
             android:gravity="center_horizontal">
 
             <TextView
-                android:id="@+id/tenant_text"
+                android:id="@+id/due_bill_text"
                 android:layout_width="170sp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/nametext"
@@ -124,8 +127,10 @@
                 android:textSize="18sp" />
         </LinearLayout>
 
+        <!--:::::::::::::::::::: :Recent text ::::::::::::::::::::::::-->
+        ress
         <TextView
-            android:id="@+id/recentreq_text"
+            android:id="@+id/recent_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/info_bg"
@@ -134,6 +139,45 @@
             android:padding="35sp"
             android:text="RECENT "
             android:textSize="28sp" />
+
+
+
+        <ImageView
+            android:id="@+id/msg_box"
+            android:layout_width="270dp"
+            android:layout_height="130dp"
+            android:layout_below="@+id/recent_text"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/rectangle" />
+
+        <TextView
+            android:id="@+id/owner_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recent_text"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/microsoft_himalaya"
+            android:paddingTop="15sp"
+            android:text="Joseph Joestar"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/text_content"
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/owner_name"
+            android:layout_centerHorizontal="true"
+            android:text="@string/user_home_5"
+            android:textSize="12dp" />
+
+        <ImageView
+            android:layout_width="101dp"
+            android:layout_height="39dp"
+            android:layout_below="@+id/msg_box"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5sp"
+            android:layout_marginRight="10sp"
+            android:src="@drawable/see_more_btn" />
 
     </RelativeLayout>
 </LinearLayout>

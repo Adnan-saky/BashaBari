@@ -2,17 +2,22 @@ package com.example.bashabari;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class _6UserMenu extends AppCompatActivity {
     ////creating a object to hold the id of the contents of layout 6
     LinearLayout main_menu_layout;
     RelativeLayout home_layout;
     private ImageView menu_btn;
+    private ImageView see_more_6;
+    private TextView bill_6;
+    private TextView request_6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,5 +49,34 @@ public class _6UserMenu extends AppCompatActivity {
                 home_layout.animate().translationX(-769);
             }
         });*/
+
+        bill_6 = findViewById(R.id.bills_6);
+        request_6 = findViewById(R.id.request_6);
+        see_more_6 = findViewById(R.id.see_more_6);
+
+        see_more_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent6 = new Intent(_6UserMenu.this, _7MoreNotices.class);
+                startActivity(intent6);
+            }
+        });
+
+        request_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent_6 = new Intent(_6UserMenu.this, _8Requests.class);
+                startActivity(intent_6);
+            }
+        });
+
+        bill_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent_06 = new Intent(_6UserMenu.this, _9Bills.class);
+                startActivity(intent_06);
+            }
+        });
+
     }
 }

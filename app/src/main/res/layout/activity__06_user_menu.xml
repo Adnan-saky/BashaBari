@@ -25,6 +25,7 @@
             android:textSize="50sp" />
 
         <TextView
+            android:id="@+id/bills_6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/futura_md_bt"
@@ -34,6 +35,7 @@
             android:textSize="30sp" />
 
         <TextView
+            android:id="@+id/request_6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/futura_md_bt"
@@ -216,6 +218,7 @@
             android:textSize="12dp" />
 
         <ImageView
+            android:id="@+id/see_more_6"
             android:layout_width="101dp"
             android:layout_height="39dp"
             android:layout_below="@+id/msg_box"

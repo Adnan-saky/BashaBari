@@ -32,7 +32,7 @@
         android:layout_height="100sp"
         android:layout_below="@+id/notice_text2"
         android:fontFamily="@font/futura_md_cn_bt"
-        android:text="Sample text"
+        android:hint="Sample text"
         android:textSize="20sp"
         android:gravity="bottom"
         android:background="@drawable/rectangle"

@@ -5,6 +5,7 @@
     android:padding="35sp"
     >
     <ImageView
+        android:id="@+id/back_arrow_btn__4"
         android:layout_width="40sp"
         android:layout_height="40sp"
         android:layout_alignParentLeft="true"
@@ -25,7 +26,7 @@
         android:id="@+id/registerTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your Info"
+        android:text="Register"
         android:textSize="60sp"
         android:fontFamily="@font/microsoft_himalaya"
         android:layout_centerHorizontal="true"
@@ -54,6 +55,7 @@
             android:fontFamily="@font/microsoft_himalaya"
             />
         <EditText
+            android:id="@+id/reg_name__4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20sp"
@@ -72,6 +74,7 @@
             />
 
         <EditText
+            android:id="@+id/reg_username__4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20sp"
@@ -84,12 +87,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email:"
+            android:text="Email:(optional)"
             android:textSize="35sp"
             android:fontFamily="@font/microsoft_himalaya"
             />
 
         <EditText
+            android:id="@+id/reg_email__4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20sp"
@@ -106,6 +110,7 @@
             android:fontFamily="@font/microsoft_himalaya"
             />
         <EditText
+            android:id="@+id/reg_pass__4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="25sp"
@@ -117,11 +122,11 @@
             />
     </LinearLayout>
     <ImageView
-        android:id="@+id/nextbtn"
+        android:id="@+id/nextbtn__4"
         android:layout_width="80sp"
         android:layout_height="80sp"
-        android:layout_below="@id/centerbox"
         android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
         android:src="@drawable/tick_button" />
 
 </RelativeLayout>

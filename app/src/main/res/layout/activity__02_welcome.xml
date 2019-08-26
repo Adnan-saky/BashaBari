@@ -27,9 +27,8 @@
     <ImageView
         android:layout_width="80sp"
         android:layout_height="80sp"
-        android:layout_below="@id/welcom_msg_2"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="350sp"
+        android:layout_alignParentBottom="true"
         android:src="@drawable/tick_button" />
 
 </RelativeLayout>

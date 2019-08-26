@@ -69,11 +69,9 @@
 
     <!--::::::::::::::::::::::::::Home Screen::::::::::::::::::::::::::-->
     <RelativeLayout
-        android:layout_width="410dp"
+        android:layout_width="410sp"
         android:layout_height="match_parent"
-        android:padding="35sp"
-
-        >
+        android:padding="35sp">
         <!--::::::::::::::::::::::::::Menu Button::::::::::::::::::::::::::-->
         <ImageView
             android:id="@+id/menu_btn_image"
@@ -121,20 +119,19 @@
         <LinearLayout
             android:id="@+id/info_nos"
             android:layout_width="match_parent"
-            android:layout_height="58sp"
+            android:layout_height="50sp"
             android:layout_below="@+id/adress_text"
             android:gravity="center_horizontal"
-
-            android:paddingTop="3sp">
+            android:paddingTop="10sp">
 
             <TextView
-                android:id="@+id/tenant_no"
+                android:id="@+id/due_bills_no"
                 android:layout_width="170sp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/nametext"
                 android:fontFamily="@font/microsoft_himalaya"
                 android:gravity="center_horizontal"
-                android:text="45"
+                android:text="3"
                 android:textSize="40sp" />
 
             <TextView
@@ -144,19 +141,21 @@
                 android:layout_below="@+id/nametext"
                 android:fontFamily="@font/microsoft_himalaya"
                 android:gravity="center_horizontal"
-                android:text="25"
+                android:text="38"
                 android:textSize="40sp" />
         </LinearLayout>
 
+
+
         <LinearLayout
-            android:id="@+id/info_text"
+            android:id="@+id/due_notice_no"
             android:layout_width="match_parent"
             android:layout_height="55sp"
             android:layout_below="@+id/info_nos"
             android:gravity="center_horizontal">
 
             <TextView
-                android:id="@+id/tenant_text"
+                android:id="@+id/due_bill_text"
                 android:layout_width="170sp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/nametext"
@@ -174,7 +173,7 @@
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/futura_md_bt"
                 android:gravity="center_horizontal"
-                android:text="Notices"
+                android:text="Requests"
                 android:textSize="18sp" />
         </LinearLayout>
 

@@ -36,7 +36,7 @@ public class _6UserMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 main_menu_layout.animate().translationX(-975);
-                home_layout.animate().translationX(-975);
+                home_layout.animate().translationX(-769);
             }
         });
     }

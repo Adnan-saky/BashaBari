@@ -13,7 +13,7 @@ public class _3Login extends AppCompatActivity {
 
     private TextView register;
     private ImageView next_btn_3;
-    private CheckBox login_as_owner__3;
+    private CheckBox login_as_owner_3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,13 +34,14 @@ public class _3Login extends AppCompatActivity {
         next_btn_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (login_as_owner__3.isChecked()) {
-                    Intent intent_3 = new Intent(_3Login.this, _10OwnerHome.class);
+                login_as_owner_3 =  findViewById(R.id.login_as_owner_3);
+                if (login_as_owner_3.isChecked()) {
+                    Intent intent_3 = new Intent(_3Login.this, _11OwnerMenu.class);
                     startActivity(intent_3);
                 }
                 else
                 {
-                    Intent intent_03 = new Intent(_3Login.this, _5UserHome.class);
+                    Intent intent_03 = new Intent(_3Login.this, _6UserMenu.class);
                     startActivity(intent_03);
                 }
             }

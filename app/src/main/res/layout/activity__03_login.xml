@@ -97,7 +97,7 @@
             />
 
         <CheckBox
-            android:id="@+id/login_as_owner__3"
+            android:id="@+id/login_as_owner_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Login as home owner"

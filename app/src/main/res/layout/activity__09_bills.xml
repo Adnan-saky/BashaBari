@@ -20,10 +20,10 @@
 
     <!--::::::::::::::::::::::::::::::::::Arrow:::::::::::::::::::::::::::::::-->
     <ImageView
+        android:id="@+id/arrow_btn_9"
         android:layout_width="50sp"
         android:layout_height="50sp"
         android:src="@drawable/arrow_btn"
-        android:id="@+id/back_arrow_btn"
         />
 
     <!--:::::::::::::::::::::::::::::Month::::::::::::::::::::::::::::::-->

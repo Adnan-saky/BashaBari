@@ -36,7 +36,6 @@
         <activity android:name="._3Login" />
         <activity android:name="._2Welcome" />
         <activity android:name="._1Welcome">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

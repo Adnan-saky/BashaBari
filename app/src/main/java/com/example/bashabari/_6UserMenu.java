@@ -27,17 +27,22 @@ public class _6UserMenu extends AppCompatActivity {
         menu_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                main_menu_layout.animate().translationX(0);
-                home_layout.animate().translationX(0);
+                /*main_menu_layout.animate().translationX(0);
+                home_layout.animate().translationX(0);*/
+                if(main_menu_layout.getVisibility() == View.VISIBLE){
+                    main_menu_layout.setVisibility(View.GONE);
+                }
+                else
+                    main_menu_layout.setVisibility(View.VISIBLE);
             }
         });
 
-        home_layout.setOnClickListener(new View.OnClickListener() {
+        /*home_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 main_menu_layout.animate().translationX(-975);
                 home_layout.animate().translationX(-769);
             }
-        });
+        });*/
     }
 }

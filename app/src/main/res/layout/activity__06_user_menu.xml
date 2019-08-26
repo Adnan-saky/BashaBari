@@ -8,13 +8,12 @@
     <!--::::::::::::::::::::::::::Menu Screen::::::::::::::::::::::::::-->
     <LinearLayout
         android:id="@+id/main_menu_layout_6"
-        android:translationX="-280sp"
         android:layout_width="280sp"
         android:layout_height="match_parent"
         android:background="@drawable/menu_bg"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -47,7 +46,6 @@
     <!--::::::::::::::::::::::::::Home Screen::::::::::::::::::::::::::-->
     <RelativeLayout
         android:id="@+id/home_layout_6"
-        android:translationX="-280sp"
         android:layout_width="410dp"
         android:layout_height="match_parent"
         android:padding="35sp"

@@ -22,7 +22,9 @@
         android:textSize="35sp"
         android:fontFamily="@font/microsoft_himalaya" />
 
+
     <ImageView
+        android:id="@+id/arrow_btn_1"
         android:layout_width="80sp"
         android:layout_height="80sp"
         android:layout_alignParentRight="true"

@@ -34,13 +34,13 @@
         android:textSize="70sp" />
 
     <ImageView
-        android:id="@+id/next_btn"
+        android:id="@+id/next_btn_3"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:src="@drawable/next_button"
-        android:layout_marginBottom="100sp"/>
+        android:layout_marginBottom="70sp"/>
 
     <ImageView
         android:background="@drawable/register_bg"
@@ -105,7 +105,27 @@
             android:fontFamily="@font/microsoft_himalaya"
             />
     </LinearLayout>
+<TextView
 
-
-
+    android:id="@+id/qstn"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Don't have an account?"
+    android:textSize="18sp"
+    android:layout_centerHorizontal="true"
+    android:layout_below="@+id/login_box"
+    android:padding="8sp"
+    >
+</TextView>
+    <TextView
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register "
+        android:textSize="18sp"
+        android:textColor="#F10E0E"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/qstn"
+        >
+    </TextView>
 </RelativeLayout>

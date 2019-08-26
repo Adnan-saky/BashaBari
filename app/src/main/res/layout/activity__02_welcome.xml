@@ -25,6 +25,7 @@
         />
 
     <ImageView
+        android:id="@+id/tick_btn_2"
         android:layout_width="80sp"
         android:layout_height="80sp"
         android:layout_alignParentRight="true"

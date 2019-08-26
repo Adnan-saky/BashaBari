@@ -15,20 +15,28 @@
         <activity android:name="._14Notices" />
         <activity android:name="._13RegisterTenants" />
         <activity android:name="._12MoreRequests" />
-        <activity android:name="._11OwnerMenu" />
-        <activity android:name="._10OwnerHome" />
+        <activity android:name="._11OwnerMenu" >
+
+        </activity>
+        <activity android:name="._10OwnerHome" >
+
+
+        </activity>
         <activity android:name="._9Bills" >
 
 
         </activity>
         <activity android:name="._8Requests" />
         <activity android:name="._7MoreNotices" />
-        <activity android:name="._6UserMenu" />
+        <activity android:name="._6UserMenu" >
+
+        </activity>
         <activity android:name="._5UserHome" />
         <activity android:name="._4Register" />
         <activity android:name="._3Login" />
         <activity android:name="._2Welcome" />
         <activity android:name="._1Welcome">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

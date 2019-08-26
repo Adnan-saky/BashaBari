@@ -7,6 +7,8 @@
 
     <!--::::::::::::::::::::::::::Menu Screen::::::::::::::::::::::::::-->
     <LinearLayout
+        android:id="@+id/main_menu_layout_6"
+        android:translationX="-280sp"
         android:layout_width="280sp"
         android:layout_height="match_parent"
         android:background="@drawable/menu_bg"
@@ -44,6 +46,8 @@
 
     <!--::::::::::::::::::::::::::Home Screen::::::::::::::::::::::::::-->
     <RelativeLayout
+        android:id="@+id/home_layout_6"
+        android:translationX="-280sp"
         android:layout_width="410dp"
         android:layout_height="match_parent"
         android:padding="35sp"
@@ -52,7 +56,7 @@
 
         <!--::::::::::::::::::::::::::Menu Button::::::::::::::::::::::::::-->
         <ImageView
-            android:id="@+id/menu_btn_image"
+            android:id="@+id/menu_btn_6"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:src="@drawable/menu_btn" />

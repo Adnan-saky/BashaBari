@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class _6UserMenu extends AppCompatActivity {
     ////creating a object to hold the id of the contents of layout 6
-    LinearLayout main_menu_layout;
+    LinearLayout main_menu_layout, main_menu_layout_right;
     RelativeLayout home_layout;
     private ImageView menu_btn;
     private ImageView see_more_6;
@@ -27,28 +27,26 @@ public class _6UserMenu extends AppCompatActivity {
         ////getting the id of the contents of layout 11
         main_menu_layout = findViewById(R.id.main_menu_layout_6);
         home_layout = findViewById(R.id.home_layout_6);
+        main_menu_layout_right = findViewById(R.id.main_menu_layout_6right);
         menu_btn = findViewById(R.id.menu_btn_6);
 
         menu_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*main_menu_layout.animate().translationX(0);
-                home_layout.animate().translationX(0);*/
-                if(main_menu_layout.getVisibility() == View.VISIBLE){
-                    main_menu_layout.setVisibility(View.GONE);
-                }
-                else
-                    main_menu_layout.setVisibility(View.VISIBLE);
+                main_menu_layout.setVisibility(View.VISIBLE);
+                home_layout.setVisibility(view.GONE);
             }
         });
 
-        /*home_layout.setOnClickListener(new View.OnClickListener() {
+        main_menu_layout_right.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                main_menu_layout.animate().translationX(-975);
-                home_layout.animate().translationX(-769);
+                if(main_menu_layout.getVisibility() == View.VISIBLE){
+                    main_menu_layout.setVisibility(View.GONE);
+                    home_layout.setVisibility(view.VISIBLE);
+                }
             }
-        });*/
+        });
 
         bill_6 = findViewById(R.id.bills_6);
         request_6 = findViewById(R.id.request_6);

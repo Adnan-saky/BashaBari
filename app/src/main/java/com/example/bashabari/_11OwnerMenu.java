@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class _11OwnerMenu extends AppCompatActivity {
     ////creating a object to hold the id of the contents of layout 11
-    private LinearLayout main_menu_layout;
+    private LinearLayout main_menu_layout,main_menu_layout_right;
     private RelativeLayout home_layout;
     private ImageView menu_btn, see_more_btn;
     private TextView add_tenant_btn, notices_btn, manage_tenant_btn,send_bills_btn,settings_btn;
@@ -25,6 +25,7 @@ public class _11OwnerMenu extends AppCompatActivity {
 
         ////getting the id of the contents of layout 11
         main_menu_layout = findViewById(R.id.main_menu_layout_11);
+        main_menu_layout_right = findViewById(R.id.main_menu_layout_11right);
         home_layout = findViewById(R.id.home_layout_11);
         menu_btn = findViewById(R.id.menu_btn_11);
         see_more_btn= findViewById(R.id.see_more_btn_11);
@@ -40,24 +41,20 @@ public class _11OwnerMenu extends AppCompatActivity {
         menu_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*main_menu_layout.animate().translationX(0);
-                home_layout.animate().translationX(0);*/
-                if(main_menu_layout.getVisibility() == View.VISIBLE){
-                    main_menu_layout.setVisibility(View.GONE);
-                }
-                else
-                    main_menu_layout.setVisibility(View.VISIBLE);
-
+                main_menu_layout.setVisibility(View.VISIBLE);
+                home_layout.setVisibility(view.GONE);
             }
         });
 
-        /*home_layout.setOnClickListener(new View.OnClickListener() {
+        main_menu_layout_right.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                main_menu_layout.animate().translationX(-975);
-                home_layout.animate().translationX(-769);
+                if(main_menu_layout.getVisibility() == View.VISIBLE){
+                    main_menu_layout.setVisibility(View.GONE);
+                    home_layout.setVisibility(view.VISIBLE);
+                }
             }
-        });*/
+        });
 
         add_tenant_btn.setOnClickListener(new View.OnClickListener() {
             @Override

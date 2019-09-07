@@ -22,7 +22,7 @@ public class _9Bills extends AppCompatActivity {
         arrow_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent9 = new Intent(_9Bills.this, _5UserHome.class);
+                Intent intent9 = new Intent(_9Bills.this, _6UserMenu.class);
                 startActivity(intent9);
             }
         });

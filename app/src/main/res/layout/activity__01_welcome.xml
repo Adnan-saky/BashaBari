@@ -18,15 +18,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/Welcometxt"
-        android:text="All information of your residence  in one place"
+        android:text="All information of your residence in one place"
         android:textSize="35sp"
         android:fontFamily="@font/microsoft_himalaya" />
 
 
     <ImageView
         android:id="@+id/arrow_btn_1"
-        android:layout_width="80sp"
-        android:layout_height="80sp"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:src="@drawable/next_button" />

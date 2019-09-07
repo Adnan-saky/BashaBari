@@ -44,14 +44,14 @@
                 android:layout_below="@+id/recentreq_text"
                 android:text="Elizabeth Olsen"
                 android:fontFamily="@font/microsoft_himalaya"
-                android:textSize="30sp"
+                android:textSize="35sp"
                 android:layout_centerHorizontal="true"/>
 
             <TextView
                 android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:text="Fix my bathroom"
-                android:textSize="12dp"
+                android:textSize="15dp"
                 android:layout_centerHorizontal="true"
                 android:paddingBottom="25sp"
                 />
@@ -60,14 +60,14 @@
                 android:layout_height="wrap_content"
                 android:text="Jouline Coujoh"
                 android:fontFamily="@font/microsoft_himalaya"
-                android:textSize="30sp"
+                android:textSize="35sp"
                 android:layout_centerHorizontal="true"/>
 
             <TextView
                 android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:text="My bathtub is broken"
-                android:textSize="12dp"
+                android:textSize="15dp"
                 android:layout_centerHorizontal="true"
                 android:paddingBottom="25sp"/>
 
@@ -76,14 +76,14 @@
                 android:layout_height="wrap_content"
                 android:text="Elizabeth Olsen"
                 android:fontFamily="@font/microsoft_himalaya"
-                android:textSize="30sp"
+                android:textSize="35sp"
                 android:layout_centerHorizontal="true"/>
 
             <TextView
                 android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:text="Our water tap is broken"
-                android:textSize="12dp"
+                android:textSize="15dp"
                 android:layout_centerHorizontal="true"
                 android:paddingBottom="25sp"/>
 
@@ -93,7 +93,7 @@
                 android:id="@+id/reqst_tenant_name"
                 android:text="Jotaro Kujo"
                 android:fontFamily="@font/microsoft_himalaya"
-                android:textSize="30sp"
+                android:textSize="35sp"
                 android:layout_centerHorizontal="true"/>
 
             <TextView
@@ -101,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/reqst_text_content"
                 android:text="Our  door lock is broken"
-                android:textSize="12dp"
+                android:textSize="15dp"
                 android:layout_centerHorizontal="true"
                 android:paddingBottom="25sp"/>
 
@@ -111,14 +111,14 @@
                 android:layout_below="@+id/recentreq_text"
                 android:text="Johnny Joestar"
                 android:fontFamily="@font/microsoft_himalaya"
-                android:textSize="30sp"
+                android:textSize="35sp"
                 android:layout_centerHorizontal="true"/>
 
             <TextView
                 android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:text="Fix my bathroom"
-                android:textSize="12dp"
+                android:textSize="15dp"
                 android:layout_centerHorizontal="true"
                 android:paddingBottom="25sp"
                 />
@@ -127,14 +127,14 @@
                 android:layout_height="wrap_content"
                 android:text="Elizabeth Olsen"
                 android:fontFamily="@font/microsoft_himalaya"
-                android:textSize="30sp"
+                android:textSize="35sp"
                 android:layout_centerHorizontal="true"/>
 
             <TextView
                 android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:text="My bathtub is broken"
-                android:textSize="12dp"
+                android:textSize="15dp"
                 android:layout_centerHorizontal="true"
                 android:paddingBottom="25sp"/>
 
@@ -143,14 +143,14 @@
                 android:layout_height="wrap_content"
                 android:text="Jouline Coujoh"
                 android:fontFamily="@font/microsoft_himalaya"
-                android:textSize="30sp"
+                android:textSize="35sp"
                 android:layout_centerHorizontal="true"/>
 
             <TextView
                 android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:text="Our water tap is broken"
-                android:textSize="12dp"
+                android:textSize="15dp"
                 android:layout_centerHorizontal="true"
                 android:paddingBottom="25sp"/>
 
@@ -159,14 +159,14 @@
                 android:layout_height="wrap_content"
                 android:text="Jotaro Kujo"
                 android:fontFamily="@font/microsoft_himalaya"
-                android:textSize="30sp"
+                android:textSize="35sp"
                 android:layout_centerHorizontal="true"/>
 
             <TextView
                 android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:text="Our  door lock is broken"
-                android:textSize="12dp"
+                android:textSize="15dp"
                 android:layout_centerHorizontal="true"
                 android:paddingBottom="25sp"/>
 
@@ -176,14 +176,14 @@
                 android:layout_below="@+id/recentreq_text"
                 android:text="Johnny Joestar"
                 android:fontFamily="@font/microsoft_himalaya"
-                android:textSize="30sp"
+                android:textSize="35sp"
                 android:layout_centerHorizontal="true"/>
 
             <TextView
                 android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:text="Fix my bathroom"
-                android:textSize="12dp"
+                android:textSize="15dp"
                 android:layout_centerHorizontal="true"
                 android:paddingBottom="25sp"
                 />
@@ -192,14 +192,14 @@
                 android:layout_height="wrap_content"
                 android:text="Jouline Coujoh"
                 android:fontFamily="@font/microsoft_himalaya"
-                android:textSize="30sp"
+                android:textSize="35sp"
                 android:layout_centerHorizontal="true"/>
 
             <TextView
                 android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:text="My bathtub is broken"
-                android:textSize="12dp"
+                android:textSize="15dp"
                 android:layout_centerHorizontal="true"
                 android:paddingBottom="25sp"/>
 

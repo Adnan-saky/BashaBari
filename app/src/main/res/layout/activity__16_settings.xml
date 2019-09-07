@@ -119,9 +119,9 @@
     </LinearLayout>
     <ImageView
         android:id="@+id/nextbtn"
-        android:layout_width="80sp"
-        android:layout_height="80sp"
-        android:layout_below="@id/centerbox"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:src="@drawable/tick_button" />
 

@@ -27,62 +27,111 @@
         />
 
     <!--::::::::::::::::::::::::::::tenant list:::::::::::::::::::::::::::::::-->
-    <LinearLayout
+    <ScrollView
         android:id="@+id/tenant_list"
         android:layout_width="match_parent"
-        android:layout_height="450sp"
+        android:layout_height="400sp"
         android:layout_below="@id/header_text"
-        android:padding="35sp"
-        android:orientation="vertical"
-        android:background="@drawable/rectangle"
         >
-
-        <CheckBox
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/recentreq_text"
-            android:text="Giorno Giovanna"
-            android:fontFamily="@font/microsoft_himalaya"
-            android:textSize="30sp"
-            android:layout_centerHorizontal="true"/>
+            android:layout_below="@id/header_text"
+            android:padding="35sp"
+            android:orientation="vertical"
+            android:background="@drawable/rectangle"
+            >
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Johnny Joestar"
-            android:fontFamily="@font/microsoft_himalaya"
-            android:textSize="30sp"
-            android:layout_centerHorizontal="true"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/recentreq_text"
+                android:text="Giorno Giovanna"
+                android:fontFamily="@font/microsoft_himalaya"
+                android:textSize="30sp"
+                android:layout_centerHorizontal="true"/>
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Jotaro Kujo"
-            android:fontFamily="@font/microsoft_himalaya"
-            android:textSize="30sp"
-            android:layout_centerHorizontal="true"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Johnny Joestar"
+                android:fontFamily="@font/microsoft_himalaya"
+                android:textSize="30sp"
+                android:layout_centerHorizontal="true"/>
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Jouline Coujoh"
-            android:fontFamily="@font/microsoft_himalaya"
-            android:textSize="30sp"
-            android:layout_centerHorizontal="true"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jotaro Kujo"
+                android:fontFamily="@font/microsoft_himalaya"
+                android:textSize="30sp"
+                android:layout_centerHorizontal="true"/>
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Marie Nathalie"
-            android:fontFamily="@font/microsoft_himalaya"
-            android:textSize="30sp"
-            android:layout_centerHorizontal="true"
-            />
-    </LinearLayout>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jouline Coujoh"
+                android:fontFamily="@font/microsoft_himalaya"
+                android:textSize="30sp"
+                android:layout_centerHorizontal="true"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Marie Nathalie"
+                android:fontFamily="@font/microsoft_himalaya"
+                android:textSize="30sp"
+                android:layout_centerHorizontal="true"
+                />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/recentreq_text"
+                android:text="Giovanni "
+                android:fontFamily="@font/microsoft_himalaya"
+                android:textSize="30sp"
+                android:layout_centerHorizontal="true"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Polnaref"
+                android:fontFamily="@font/microsoft_himalaya"
+                android:textSize="30sp"
+                android:layout_centerHorizontal="true"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kakyoin"
+                android:fontFamily="@font/microsoft_himalaya"
+                android:textSize="30sp"
+                android:layout_centerHorizontal="true"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Killer Quinn"
+                android:fontFamily="@font/microsoft_himalaya"
+                android:textSize="30sp"
+                android:layout_centerHorizontal="true"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Diavolo"
+                android:fontFamily="@font/microsoft_himalaya"
+                android:textSize="30sp"
+                android:layout_centerHorizontal="true"
+                />
+        </LinearLayout>
+    </ScrollView>
+
 
     <ImageView
-        android:layout_width="150sp"
-        android:layout_height="50sp"
+        android:layout_width="180sp"
+        android:layout_height="60sp"
         android:layout_below="@+id/tenant_list"
         android:layout_alignParentRight="true"
         android:layout_marginRight="10sp"

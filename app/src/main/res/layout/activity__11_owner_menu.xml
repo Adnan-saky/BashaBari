@@ -2,14 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:background="@drawable/bg"
-
+    android:id="@+id/main_menu_layout_11right"
     >
 
     <!--::::::::::::::::::::::::::Menu Screen::::::::::::::::::::::::::-->
     <LinearLayout
-
         android:id="@+id/main_menu_layout_11"
-        android:layout_width="280sp"
+        android:layout_width="400sp"
         android:layout_height="match_parent"
         android:background="@drawable/menu_bg"
         android:gravity="center_horizontal"
@@ -21,9 +20,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/futura_md_cn_bt"
             android:paddingTop="80sp"
-            android:paddingBottom="50sp"
+            android:paddingBottom="30sp"
             android:text="MENU"
-            android:textSize="50sp" />
+            android:textSize="70sp" />
 
         <TextView
             android:id="@+id/add_tenant_btn_11"
@@ -32,7 +31,7 @@
             android:fontFamily="@font/futura_md_bt"
             android:padding="20sp"
             android:text="Add Tenant"
-            android:textSize="30sp" />
+            android:textSize="35sp" />
 
         <TextView
             android:id="@+id/notices_btn_11"
@@ -41,7 +40,7 @@
             android:fontFamily="@font/futura_md_bt"
             android:padding="20sp"
             android:text="Notices"
-            android:textSize="30sp" />
+            android:textSize="35sp" />
 
         <TextView
             android:id="@+id/manage_tenant_btn_11"
@@ -50,7 +49,7 @@
             android:fontFamily="@font/futura_md_bt"
             android:padding="20sp"
             android:text="Manage Tenant"
-            android:textSize="30sp" />
+            android:textSize="35sp" />
 
         <TextView
             android:id="@+id/send_bills_btn_11"
@@ -59,7 +58,7 @@
             android:fontFamily="@font/futura_md_bt"
             android:padding="20sp"
             android:text="Send Bills"
-            android:textSize="30sp" />
+            android:textSize="35sp" />
 
         <TextView
             android:id="@+id/settings_btn_11"
@@ -68,7 +67,7 @@
             android:fontFamily="@font/futura_md_bt"
             android:padding="20sp"
             android:text="Settings"
-            android:textSize="30sp" />
+            android:textSize="35sp" />
 
 
     </LinearLayout>
@@ -77,14 +76,15 @@
     <RelativeLayout
 
         android:id="@+id/home_layout_11"
-        android:layout_width="410sp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="35sp">
+        android:padding="35sp"
+        android:visibility="visible">
         <!--::::::::::::::::::::::::::Menu Button::::::::::::::::::::::::::-->
         <ImageView
             android:id="@+id/menu_btn_11"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/menu_btn" />
 
         <!--::::::::::::::::::::::::::Owner text:::::::::::::::::::::::::::-->
@@ -116,11 +116,11 @@
         <!--:::::::::::::::::::::::::::::Address:::::::::::::::::::::::::::::-->
         <ImageView
             android:id="@+id/see_more_btn_11"
-            android:layout_width="101dp"
-            android:layout_height="39dp"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
             android:layout_below="@+id/reqst_bg"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="5sp"
+            android:layout_marginTop="20sp"
             android:layout_marginRight="10sp"
             android:src="@drawable/see_more_btn" />
 
@@ -141,7 +141,7 @@
                 android:fontFamily="@font/microsoft_himalaya"
                 android:gravity="center_horizontal"
                 android:text="3"
-                android:textSize="40sp" />
+                android:textSize="45sp" />
 
             <TextView
                 android:id="@+id/notice_no"
@@ -151,7 +151,7 @@
                 android:fontFamily="@font/microsoft_himalaya"
                 android:gravity="center_horizontal"
                 android:text="38"
-                android:textSize="40sp" />
+                android:textSize="45sp" />
         </LinearLayout>
 
 
@@ -172,7 +172,7 @@
                 android:fontFamily="@font/futura_md_bt"
                 android:gravity="center_horizontal"
                 android:text="Tenants"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/notice_text"
@@ -183,7 +183,7 @@
                 android:fontFamily="@font/futura_md_bt"
                 android:gravity="center_horizontal"
                 android:text="Requests"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
         </LinearLayout>
 
         <TextView
@@ -226,7 +226,8 @@
             android:layout_below="@+id/info_bg"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/futura_md_cn_bt"
-            android:padding="35sp"
+            android:paddingTop="35sp"
+            android:paddingBottom="10dp"
             android:text="RECENT REQUESTS"
             android:textSize="28sp" />
 
@@ -240,7 +241,7 @@
             android:fontFamily="@font/microsoft_himalaya"
             android:paddingTop="15sp"
             android:text="Marie Nathalie"
-            android:textSize="30sp" />
+            android:textSize="35sp" />
 
         <TextView
             android:id="@+id/reqst_text_content"
@@ -249,7 +250,7 @@
             android:layout_below="@+id/reqst_tenant_name"
             android:layout_centerHorizontal="true"
             android:text="My shower is broken, i cant do anything. please fix asap"
-            android:textSize="12dp" />
+            android:textSize="15dp" />
 
     </RelativeLayout>
 

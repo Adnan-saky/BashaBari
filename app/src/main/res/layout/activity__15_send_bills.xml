@@ -36,6 +36,7 @@
         android:fontFamily="@font/microsoft_himalaya"
         android:textSize="40sp"
         android:paddingRight="35sp"
+        android:paddingBottom="30sp"
         />
     <Spinner
         android:layout_width="wrap_content"
@@ -75,36 +76,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rent"
-            android:textSize="25sp"
+            android:textSize="30sp"
             android:fontFamily="@font/microsoft_himalaya"
             />
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Electricity"
-            android:textSize="25sp"
+            android:textSize="30sp"
             android:fontFamily="@font/microsoft_himalaya"
             />
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Gas"
-            android:textSize="25sp"
+            android:textSize="30sp"
             android:fontFamily="@font/microsoft_himalaya"
             />
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Water"
-            android:textSize="25sp"
+            android:textSize="30sp"
             android:fontFamily="@font/microsoft_himalaya"
             />
     </LinearLayout>
 
     <!--::::::::::::::::::::::::::::Add to paid btn::::::::::::::::::::::;:-->
     <ImageView
-        android:layout_width="150sp"
-        android:layout_height="50sp"
+        android:layout_width="180sp"
+        android:layout_height="60sp"
         android:layout_below="@+id/due_bg"
         android:layout_alignParentRight="true"
         android:layout_marginRight="10sp"

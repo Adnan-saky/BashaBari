@@ -43,14 +43,14 @@
                 android:layout_below="@+id/recentreq_text"
                 android:text="Joseph Joestar"
                 android:fontFamily="@font/microsoft_himalaya"
-                android:textSize="30sp"
+                android:textSize="35sp"
                 android:layout_centerHorizontal="true"/>
 
             <TextView
                 android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:text="There will be no water tomorrow"
-                android:textSize="12dp"
+                android:textSize="15dp"
                 android:layout_centerHorizontal="true"
                 android:paddingBottom="15sp"
                 />
@@ -59,14 +59,14 @@
                 android:layout_height="wrap_content"
                 android:text="Joseph Joestar"
                 android:fontFamily="@font/microsoft_himalaya"
-                android:textSize="30sp"
+                android:textSize="35sp"
                 android:layout_centerHorizontal="true"/>
 
             <TextView
                 android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:text="There will be no Gas tomorrow"
-                android:textSize="12dp"
+                android:textSize="15dp"
                 android:layout_centerHorizontal="true"
                 android:paddingBottom="15sp"/>
 
@@ -75,14 +75,14 @@
                 android:layout_height="wrap_content"
                 android:text="Joseph Joestar"
                 android:fontFamily="@font/microsoft_himalaya"
-                android:textSize="30sp"
+                android:textSize="35sp"
                 android:layout_centerHorizontal="true"/>
 
             <TextView
                 android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:text="There will be no Electricity tomorrow"
-                android:textSize="12dp"
+                android:textSize="15dp"
                 android:layout_centerHorizontal="true"
                 android:paddingBottom="15sp"/>
 
@@ -92,7 +92,7 @@
                 android:id="@+id/reqst_tenant_name"
                 android:text="Joseph Joestar"
                 android:fontFamily="@font/microsoft_himalaya"
-                android:textSize="30sp"
+                android:textSize="35sp"
                 android:layout_centerHorizontal="true"/>
 
             <TextView
@@ -100,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/reqst_text_content"
                 android:text="There will be no water tomorrow"
-                android:textSize="12dp"
+                android:textSize="15dp"
                 android:layout_centerHorizontal="true"
                 android:paddingBottom="15sp"/>
 
@@ -109,14 +109,14 @@
                 android:layout_height="wrap_content"
                 android:text="Joseph Joestar"
                 android:fontFamily="@font/microsoft_himalaya"
-                android:textSize="30sp"
+                android:textSize="35sp"
                 android:layout_centerHorizontal="true"/>
 
             <TextView
                 android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:text="There will be no water tomorrow"
-                android:textSize="12dp"
+                android:textSize="15dp"
                 android:layout_centerHorizontal="true"
                 android:paddingBottom="15sp"/>
 
@@ -125,31 +125,14 @@
                 android:layout_height="wrap_content"
                 android:text="Joseph Joestar"
                 android:fontFamily="@font/microsoft_himalaya"
-                android:textSize="30sp"
+                android:textSize="35sp"
                 android:layout_centerHorizontal="true"/>
 
             <TextView
                 android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:text="There will be no water tomorrow"
-                android:textSize="12dp"
-                android:layout_centerHorizontal="true"
-                android:paddingBottom="15sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/recentreq_text"
-                android:text="Joseph Joestar"
-                android:fontFamily="@font/microsoft_himalaya"
-                android:textSize="30sp"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                android:layout_width="200sp"
-                android:layout_height="wrap_content"
-                android:text="There will be no water tomorrow"
-                android:textSize="12dp"
+                android:textSize="15dp"
                 android:layout_centerHorizontal="true"
                 android:paddingBottom="15sp"/>
 
@@ -159,14 +142,14 @@
                 android:layout_below="@+id/recentreq_text"
                 android:text="Joseph Joestar"
                 android:fontFamily="@font/microsoft_himalaya"
-                android:textSize="30sp"
+                android:textSize="35sp"
                 android:layout_centerHorizontal="true"/>
 
             <TextView
                 android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:text="There will be no water tomorrow"
-                android:textSize="12dp"
+                android:textSize="15dp"
                 android:layout_centerHorizontal="true"
                 android:paddingBottom="15sp"/>
 
@@ -176,14 +159,31 @@
                 android:layout_below="@+id/recentreq_text"
                 android:text="Joseph Joestar"
                 android:fontFamily="@font/microsoft_himalaya"
-                android:textSize="30sp"
+                android:textSize="35sp"
                 android:layout_centerHorizontal="true"/>
 
             <TextView
                 android:layout_width="200sp"
                 android:layout_height="wrap_content"
                 android:text="There will be no water tomorrow"
-                android:textSize="12dp"
+                android:textSize="15dp"
+                android:layout_centerHorizontal="true"
+                android:paddingBottom="15sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/recentreq_text"
+                android:text="Joseph Joestar"
+                android:fontFamily="@font/microsoft_himalaya"
+                android:textSize="35sp"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:text="There will be no water tomorrow"
+                android:textSize="15dp"
                 android:layout_centerHorizontal="true"
                 android:paddingBottom="15sp"/>
 

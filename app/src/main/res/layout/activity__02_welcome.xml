@@ -16,7 +16,7 @@
 
     <TextView
         android:id="@+id/welcom_msg_2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/NewHere"
         android:text="@string/welcome_2_msg"
@@ -26,8 +26,8 @@
 
     <ImageView
         android:id="@+id/tick_btn_2"
-        android:layout_width="80sp"
-        android:layout_height="80sp"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:src="@drawable/tick_button" />

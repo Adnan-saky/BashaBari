@@ -10,7 +10,7 @@
         android:layout_height="40sp"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="10sp"
-        android:src="@drawable/arrow_btn" />
+         />
 
     <TextView
         android:id="@+id/loginTxt"

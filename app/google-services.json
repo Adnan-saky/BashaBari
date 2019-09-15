@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "746420185127",
+    "firebase_url": "https://basha-bari-d5761.firebaseio.com",
+    "project_id": "basha-bari-d5761",
+    "storage_bucket": "basha-bari-d5761.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:746420185127:android:dcccce34cabf97e4d10602",
+        "android_client_info": {
+          "package_name": "com.example.bashabari"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "746420185127-d9paavdkqfkut484heieq4l98mi5d4sp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bashabari",
+            "certificate_hash": "5f017986d38335aab7eb0c841bac491af015e1ea"
+          }
+        },
+        {
+          "client_id": "746420185127-afbbcadopjpidpgmqsi40na6q6m1is8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo1frxfn3EYVRwzk2TYA5FFlc2qWUDNKA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "746420185127-afbbcadopjpidpgmqsi40na6q6m1is8k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

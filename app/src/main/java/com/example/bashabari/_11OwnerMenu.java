@@ -15,7 +15,7 @@ public class _11OwnerMenu extends AppCompatActivity {
     private LinearLayout main_menu_layout,main_menu_layout_right;
     private RelativeLayout home_layout;
     private ImageView menu_btn, see_more_btn;
-    private TextView add_tenant_btn, notices_btn, manage_tenant_btn,send_bills_btn,settings_btn;
+    private TextView add_tenant_btn, notices_btn, manage_tenant_btn,send_bills_btn,settings_btn,signout_btn;
 
 
     @Override
@@ -36,6 +36,7 @@ public class _11OwnerMenu extends AppCompatActivity {
         manage_tenant_btn = findViewById(R.id.manage_tenant_btn_11);
         send_bills_btn = findViewById(R.id.send_bills_btn_11);
         settings_btn = findViewById(R.id.settings_btn_11);
+        signout_btn = findViewById(R.id.signout_11);
 
 
         menu_btn.setOnClickListener(new View.OnClickListener() {
@@ -100,6 +101,14 @@ public class _11OwnerMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent11 = new Intent(_11OwnerMenu.this, _12MoreRequests.class);
+                startActivity(intent11);
+            }
+        });
+
+        signout_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent11 = new Intent(_11OwnerMenu.this, _3Login.class);
                 startActivity(intent11);
             }
         });

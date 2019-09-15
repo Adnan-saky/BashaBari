@@ -42,6 +42,15 @@
             android:text="Requests"
             android:textSize="40sp" />
 
+        <TextView
+            android:id="@+id/signout_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/futura_md_bt"
+            android:padding="20sp"
+            android:text="Sign Out"
+            android:textSize="40sp" />
+
     </LinearLayout>
 
     <!--::::::::::::::::::::::::::Home Screen::::::::::::::::::::::::::-->

@@ -15,18 +15,17 @@
         android:id="@+id/registerTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
+        android:text="Owner Registration"
         android:textSize="50sp"
         android:fontFamily="@font/microsoft_himalaya"
         android:layout_centerHorizontal="true"
-        android:textColor="#A80000"
         android:paddingTop="10sp"
         />
     <ImageView
         android:background="@drawable/register_bg"
         android:id="@+id/register_bg"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="510dp"
         android:layout_below="@+id/registerTxt"
         />
     <LinearLayout

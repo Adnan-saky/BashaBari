@@ -23,27 +23,26 @@
         android:paddingTop="80sp"
         />
     <TextView
-        android:id="@+id/registerTxt"
+        android:id="@+id/header_text_16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Change Your Info"
+        android:text="Change Info"
         android:textSize="50sp"
         android:fontFamily="@font/microsoft_himalaya"
         android:layout_centerHorizontal="true"
-        android:paddingTop="35sp"
         />
     <ImageView
         android:background="@drawable/register_bg"
         android:id="@+id/register_bg"
         android:layout_width="match_parent"
-        android:layout_height="470sp"
-        android:layout_below="@+id/registerTxt"
+        android:layout_height="510sp"
+        android:layout_below="@+id/header_text_16"
         />
     <LinearLayout
-        android:layout_below="@+id/registerTxt"
+        android:layout_below="@+id/header_text_16"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="25sp"
+        android:padding="15sp"
 
         android:orientation="vertical"
         >
@@ -51,10 +50,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Name :"
-            android:textSize="35sp"
+            android:textSize="25sp"
             android:fontFamily="@font/microsoft_himalaya"
             />
         <EditText
+            android:id="@+id/reg_name__16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20sp"
@@ -63,16 +63,18 @@
             android:hint="example"
 
             />
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Username :"
-            android:textSize="35sp"
+            android:textSize="25sp"
             android:fontFamily="@font/microsoft_himalaya"
             />
 
         <EditText
+            android:id="@+id/reg_username__16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20sp"
@@ -85,28 +87,47 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email:"
-            android:textSize="35sp"
+            android:text="NID no :"
+            android:textSize="25sp"
             android:fontFamily="@font/microsoft_himalaya"
             />
-
         <EditText
+            android:id="@+id/reg_NID_NO_16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20sp"
             android:textSize="25sp"
             android:fontFamily="@font/microsoft_himalaya"
-            android:hint="example@gmail.com"
+            android:hint="example"
+
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone no :"
+            android:textSize="25sp"
+            android:fontFamily="@font/microsoft_himalaya"
+            />
+
+        <EditText
+            android:id="@+id/reg_Phn_no_16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20sp"
+            android:textSize="25sp"
+            android:fontFamily="@font/microsoft_himalaya"
+            android:hint="017XXXXXXXX"
             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Password :"
-            android:textSize="35sp"
+            android:textSize="25sp"
             android:fontFamily="@font/microsoft_himalaya"
             />
         <EditText
+            android:id="@+id/reg_pass__16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="25sp"

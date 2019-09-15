@@ -17,7 +17,7 @@ public class _6UserMenu extends AppCompatActivity {
     private ImageView menu_btn;
     private ImageView see_more_6;
     private TextView bill_6;
-    private TextView request_6;
+    private TextView request_6, signout_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,10 @@ public class _6UserMenu extends AppCompatActivity {
         home_layout = findViewById(R.id.home_layout_6);
         main_menu_layout_right = findViewById(R.id.main_menu_layout_6right);
         menu_btn = findViewById(R.id.menu_btn_6);
+        signout_btn = findViewById(R.id.signout_6);
+        bill_6 = findViewById(R.id.bills_6);
+        request_6 = findViewById(R.id.request_6);
+        see_more_6 = findViewById(R.id.see_more_6);
 
         menu_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,15 +52,11 @@ public class _6UserMenu extends AppCompatActivity {
             }
         });
 
-        bill_6 = findViewById(R.id.bills_6);
-        request_6 = findViewById(R.id.request_6);
-        see_more_6 = findViewById(R.id.see_more_6);
-
         see_more_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent6 = new Intent(_6UserMenu.this, _7MoreNotices.class);
-                startActivity(intent6);
+                Intent intent_6 = new Intent(_6UserMenu.this, _7MoreNotices.class);
+                startActivity(intent_6);
             }
         });
 
@@ -72,6 +72,14 @@ public class _6UserMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent_06 = new Intent(_6UserMenu.this, _9Bills.class);
+                startActivity(intent_06);
+            }
+        });
+
+        signout_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent_06 = new Intent(_6UserMenu.this, _3Login.class);
                 startActivity(intent_06);
             }
         });

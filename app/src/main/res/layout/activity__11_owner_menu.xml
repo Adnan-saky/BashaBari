@@ -19,8 +19,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/futura_md_cn_bt"
-            android:paddingTop="80sp"
-            android:paddingBottom="30sp"
+            android:paddingTop="60sp"
+            android:paddingBottom="20sp"
             android:text="MENU"
             android:textSize="70sp" />
 
@@ -67,6 +67,15 @@
             android:fontFamily="@font/futura_md_bt"
             android:padding="20sp"
             android:text="Settings"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/signout_11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/futura_md_bt"
+            android:padding="20sp"
+            android:text="Sign Out"
             android:textSize="35sp" />
 
 

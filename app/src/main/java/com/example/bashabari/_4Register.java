@@ -53,13 +53,14 @@ public class _4Register extends AppCompatActivity {
         String nid_no = Nid_no.getText().toString().trim();
         String phone_no = Phone_no.getText().toString().trim();
         String password = Password.getText().toString().trim();
+        if( !name.isEmpty() && !username.isEmpty() && !nid_no.isEmpty() && !phone_no.isEmpty() && !password.isEmpty() ) {
+            userInfo usrinf = new userInfo(name, username, nid_no, phone_no, password);
 
-        userInfo usrinf = new userInfo(name, username, nid_no, phone_no, password);
-
-        String key = phone_no;
+            String key = phone_no;
 
 
-        databaseReference.child(key).setValue(usrinf);
+            databaseReference.child(key).setValue(usrinf);
+        }
 
     }
 }

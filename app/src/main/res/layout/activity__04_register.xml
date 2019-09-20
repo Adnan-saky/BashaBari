@@ -87,6 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20sp"
             android:textSize="25sp"
+            android:numeric="integer"
             android:fontFamily="@font/microsoft_himalaya"
             android:hint="example"
 
@@ -106,6 +107,7 @@
             android:layout_marginBottom="20sp"
             android:textSize="25sp"
             android:fontFamily="@font/microsoft_himalaya"
+            android:numeric="integer"
             android:hint="017XXXXXXXX"
             />
 

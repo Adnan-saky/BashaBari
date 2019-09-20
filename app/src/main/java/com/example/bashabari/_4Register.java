@@ -56,7 +56,7 @@ public class _4Register extends AppCompatActivity {
 
         userInfo usrinf = new userInfo(name, username, nid_no, phone_no, password);
 
-        String key = username;
+        String key = phone_no;
 
 
         databaseReference.child(key).setValue(usrinf);

@@ -58,7 +58,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Username :"
+            android:text="Address:"
             android:textSize="25sp"
             android:fontFamily="@font/microsoft_himalaya"
             />
@@ -70,7 +70,7 @@
             android:layout_marginBottom="20sp"
             android:textSize="25sp"
             android:fontFamily="@font/microsoft_himalaya"
-            android:hint="example"
+            android:hint="Type your full address here "
 
             />
 
@@ -89,7 +89,7 @@
             android:textSize="25sp"
             android:numeric="integer"
             android:fontFamily="@font/microsoft_himalaya"
-            android:hint="example"
+            android:hint="012XXX"
 
             />
         <TextView

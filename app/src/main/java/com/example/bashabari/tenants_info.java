@@ -1,15 +1,17 @@
 package com.example.bashabari;
 
-public class userInfo {
-    private String Name, Address, Nid_no, Phone_no, Password;
+public class tenants_info {
 
-    public userInfo(String name, String address, String nid_no, String phone_no, String password) {
+    private String Name, Username, Nid_no, Phone_no, Password;
+
+    public tenants_info(String name, String username, String nid_no, String phone_no, String password) {
         Name = name;
-        Address = address;
+        Username = username;
         Nid_no = nid_no;
         Phone_no = phone_no;
         Password = password;
-    }
+
+}
 
     public String getName() {
         return Name;
@@ -19,12 +21,12 @@ public class userInfo {
         Name = name;
     }
 
-    public String getAddress() {
-        return Address;
+    public String getUsername() {
+        return Username;
     }
 
-    public void setAddress(String address) {
-        Address = address;
+    public void setUsername(String username) {
+        Username = username;
     }
 
     public String getNid_no() {
@@ -51,3 +53,4 @@ public class userInfo {
         Password = password;
     }
 }
+

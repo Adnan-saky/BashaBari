@@ -17,7 +17,7 @@ public class _13RegisterTenants extends AppCompatActivity {
     private ImageView reg_btn;
 
     DatabaseReference databaseReference;
-    private EditText Name, Username, Nid_no, Phone_no, Password;
+    private EditText Name, Address, Nid_no, Phone_no, Password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class _13RegisterTenants extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference("Tenant Database");
 
         Name = findViewById(R.id.reg_name__13);
-        Username = findViewById(R.id.reg_username__13);
+        Address = findViewById(R.id.reg_address__13);
         Nid_no = findViewById(R.id.reg_NID_NO_13);
         Phone_no = findViewById(R.id.reg_Phn_no_13);
         Password = findViewById(R.id.reg_pass__13);
@@ -60,12 +60,12 @@ public class _13RegisterTenants extends AppCompatActivity {
     public void saveToDatabase(){
         //it will save registration data in database
         String name = Name.getText().toString().trim();
-        String username = Username.getText().toString().trim();
+        String address = Address.getText().toString().trim();
         String nid_no = Nid_no.getText().toString().trim();
         String phone_no = Phone_no.getText().toString().trim();
         String password = Password.getText().toString().trim();
-        if( !name.isEmpty() && !username.isEmpty() && !nid_no.isEmpty() && !phone_no.isEmpty() && !password.isEmpty() ) {
-            tenants_info tenants = new tenants_info(name, username, nid_no, phone_no, password);
+        if( !name.isEmpty() && !address.isEmpty() && !nid_no.isEmpty() && !phone_no.isEmpty() && !password.isEmpty() ) {
+            userInfo tenants = new userInfo(name, address, nid_no, phone_no, password);
 
             String key = phone_no;
 

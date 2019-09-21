@@ -68,19 +68,19 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Username :"
+            android:text="Address:"
             android:textSize="25sp"
             android:fontFamily="@font/microsoft_himalaya"
             />
 
         <EditText
-            android:id="@+id/reg_username__16"
+            android:id="@+id/reg_address__16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20sp"
             android:textSize="25sp"
             android:fontFamily="@font/microsoft_himalaya"
-            android:hint="example"
+            android:hint="Type your full address here "
 
             />
 

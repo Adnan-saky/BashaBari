@@ -10,7 +10,6 @@ import android.widget.ImageView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 
 public class _4Register extends AppCompatActivity {
     ///////////////////////variable declaration
@@ -28,7 +27,7 @@ public class _4Register extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference("Owner Database");
         next_btn =  findViewById(R.id.next_btn_4);
         Name = findViewById(R.id.reg_name__4);
-        Address = findViewById(R.id.reg_username__4);
+        Address = findViewById(R.id.reg_address__4);
         Nid_no = findViewById(R.id.reg_NID_NO_4);
         Phone_no = findViewById(R.id.reg_Phn_no_4);
         Password = findViewById(R.id.reg_pass__4);

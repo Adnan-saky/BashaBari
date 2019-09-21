@@ -64,7 +64,7 @@
             />
 
         <EditText
-            android:id="@+id/reg_username__4"
+            android:id="@+id/reg_address__4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20sp"

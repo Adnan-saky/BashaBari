@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -14,6 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class _4Register extends AppCompatActivity {
     ///////////////////////variable declaration
     private ImageView next_btn;
+    private TextView back_login_btn;
     DatabaseReference databaseReference;
     private EditText Name, Address, Nid_no, Phone_no, Password;
 
@@ -25,7 +28,8 @@ public class _4Register extends AppCompatActivity {
 
         //getting items from xml file
         databaseReference = FirebaseDatabase.getInstance().getReference("Owner Database");
-        next_btn =  findViewById(R.id.next_btn_4);
+        next_btn = findViewById(R.id.next_btn_4);
+        back_login_btn = findViewById(R.id.back_login_4);
         Name = findViewById(R.id.reg_name__4);
         Address = findViewById(R.id.reg_address__4);
         Nid_no = findViewById(R.id.reg_NID_NO_4);
@@ -37,29 +41,44 @@ public class _4Register extends AppCompatActivity {
             //Tick Button
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(_4Register.this, _3Login.class);
-                startActivity(intent1);
 
-                saveToDatabase();
+                String name = Name.getText().toString().trim();
+                String address = Address.getText().toString().trim();
+                String nid_no = Nid_no.getText().toString().trim();
+                String phone_no = Phone_no.getText().toString().trim();
+                String password = Password.getText().toString().trim();
+
+                //if fields are not empty:
+                if( !name.isEmpty() && !address.isEmpty() && !nid_no.isEmpty() && !phone_no.isEmpty() && !password.isEmpty() ) {
+
+                    saveToDatabase(name, address, nid_no, phone_no, password);
+
+                    Intent intent1 = new Intent(_4Register.this, _3Login.class);
+                    startActivity(intent1);
+                }
+
+
+            }
+        });
+
+        back_login_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(_4Register.this, _3Login.class);
+                startActivity(intent2);
             }
         });
     }
 
-    public void saveToDatabase(){
+    public void saveToDatabase(String name, String address, String nid_no, String phone_no, String password){
         //it will save registration data in database
-        String name = Name.getText().toString().trim();
-        String address = Address.getText().toString().trim();
-        String nid_no = Nid_no.getText().toString().trim();
-        String phone_no = Phone_no.getText().toString().trim();
-        String password = Password.getText().toString().trim();
-        if( !name.isEmpty() && !address.isEmpty() && !nid_no.isEmpty() && !phone_no.isEmpty() && !password.isEmpty() ) {
-            userInfo usrinf = new userInfo(name, address, nid_no, phone_no, password);
+        userInfo usrinf = new userInfo(name, address, nid_no, phone_no, password);
 
-            String key = phone_no;
+        String key = phone_no;
+        databaseReference.child(key).setValue(usrinf);
 
-
-            databaseReference.child(key).setValue(usrinf);
-        }
+        //toast for showing registration done message
+        Toast.makeText(getApplicationContext(),"Registration Done",Toast.LENGTH_LONG).show();
 
     }
 }

@@ -29,6 +29,7 @@
         android:layout_below="@+id/registerTxt"
         />
     <LinearLayout
+        android:id="@+id/register_panel_4"
         android:layout_below="@+id/registerTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -130,6 +131,19 @@
 
             />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/back_login_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back to Login Page"
+        android:textSize="20sp"
+        android:textColor="#F10E0E"
+        android:layout_alignParentBottom="true"
+        android:padding="40sp"
+        >
+    </TextView>
+
     <ImageView
         android:id="@+id/next_btn_4"
         android:layout_width="100sp"

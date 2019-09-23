@@ -10,14 +10,17 @@ import android.widget.ImageView;
 public class _14Notices extends AppCompatActivity {
     ////creating a object to hold the id of arrow button of layout 13
     private ImageView arrow_btn;
+    private ImageView notice_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__14_notices);
 
-        ////getting the id of arrow button of layout 12
-        arrow_btn =  findViewById(R.id.arrow_btn_14);
+        ////getting the id of button of layout 12
+        arrow_btn = findViewById(R.id.arrow_btn_14);
+        notice_btn = findViewById(R.id.add_notice_btn_14);
+
         arrow_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -18,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class _4Register extends AppCompatActivity {
-    ///////////////////////variable declaration
+    ///////////////////////variable declaration for views
     private ImageView next_btn;
     private TextView back_login_btn;
     DatabaseReference databaseReference;
@@ -62,56 +62,36 @@ public class _4Register extends AppCompatActivity {
                 final String phone_no = Phone_no.getText().toString().trim();
                 final String password = Password.getText().toString().trim();
 
-                databaseReference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        try {
-                            userInfo usrinf = dataSnapshot.getValue(userInfo.class);
-                            if (!phone_no.equals(usrinf.getPhone_no())) {
-                                //if fields are not empty:
-                                if (!name.isEmpty() && !address.isEmpty() && !nid_no.isEmpty() && !phone_no.isEmpty() && !password.isEmpty()) {
+                if( !name.isEmpty() && !address.isEmpty() && !nid_no.isEmpty() && !phone_no.isEmpty() && !password.isEmpty() ) {
+                    saveToDatabase(name, address, nid_no, phone_no, password);
+                    Intent intent1 = new Intent(_4Register.this, _3Login.class);
+                    startActivity(intent1);
+                }
 
-                                    saveToDatabase(address, name, nid_no, password, phone_no);
+                //else fields are empty
+                else{
+                    Toast.makeText(getApplicationContext(),"Empty Input Field",Toast.LENGTH_SHORT).show();
 
-                                    Intent intent1 = new Intent(_4Register.this, _3Login.class);
-                                    startActivity(intent1);
-                                }
+                    if(name.isEmpty())
+                        Name.setError("Input your name.");
+                    else if(address.isEmpty())
+                        Address.setError("Input your address");
+                    else if(nid_no.isEmpty())
+                        Nid_no.setError("Input your National ID Number");
+                    else if(password.isEmpty())
+                        Password.setError("Input a passwordField");
+                    else if(phone_no.isEmpty())
+                        Phone_no.setError("Input your address");
+                }
 
-                                //else fields are empty
-                                else {
-                                    Toast.makeText(getApplicationContext(), "Empty Input Field", Toast.LENGTH_SHORT).show();
-
-                                    if (name.isEmpty())
-                                        Name.setError("Input your name.");
-                                    else if (address.isEmpty())
-                                        Address.setError("Input your address");
-                                    else if (nid_no.isEmpty())
-                                        Nid_no.setError("Input your National ID Number");
-                                    else if (password.isEmpty())
-                                        Password.setError("Input a password");
-                                    else if (phone_no.isEmpty())
-                                        Phone_no.setError("Input your address");
-                                }
-                            }
-                            else{
-                                Toast.makeText(getApplicationContext(), "Phone Already number exists", Toast.LENGTH_LONG).show();
-                            }
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                    }
-                });
 
 
             }
         });
     }
 
-    public void saveToDatabase(String name, String address, String nid_no, String phone_no, String password) {
-        //it will save registration data in database
+    public void saveToDatabase(final String name, final String address, final String nid_no, final String phone_no, final String password) {
+        /*//it will save registration data in database
         userInfo usrinf = new userInfo(address, name, nid_no, password, phone_no);
 
         String key = phone_no;
@@ -119,6 +99,40 @@ public class _4Register extends AppCompatActivity {
 
         //toast for showing registration done message
         Toast.makeText(getApplicationContext(), "Registration Done", Toast.LENGTH_LONG).show();
+        */
+
+
+        try {
+            databaseReference.child(phone_no).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    try {
+                        userInfo userinf = dataSnapshot.getValue(userInfo.class);
+                        if (phone_no.equals(userinf.getPhone_no())) {
+                            Toast.makeText(_4Register.this, "Phone Number already exists", Toast.LENGTH_LONG).show();
+                            return;
+                        }
+
+                    } catch (Exception e) {
+                        userInfo usrinf = new userInfo(address, name, nid_no, password, phone_no);
+                        String key = phone_no;
+                        databaseReference.child(key).setValue(usrinf);
+                        //toast for showing registration done message
+                        Toast.makeText(getApplicationContext(), "Registration Done", Toast.LENGTH_LONG).show();
+
+                    }
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
+
 
     }
 }

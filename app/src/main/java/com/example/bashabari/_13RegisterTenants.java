@@ -100,7 +100,7 @@ public class _13RegisterTenants extends AppCompatActivity {
                     else if(nid_no.isEmpty())
                         Nid_no.setError("Input your National ID Number");
                     else if(password.isEmpty())
-                        Password.setError("Input a password");
+                        Password.setError("Input a passwordField");
                     else if(phone_no.isEmpty())
                         Phone_no.setError("Input your address");
                 }

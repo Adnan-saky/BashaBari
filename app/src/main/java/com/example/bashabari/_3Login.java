@@ -19,9 +19,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class _3Login extends AppCompatActivity {
-
-    public EditText key, password;
-    public TextView register;
+    //variable to store views
+    public EditText phoneField, passwordField;
+    public TextView registerButton;
     public ImageView next_btn_3;
     private CheckBox login_as_owner_3;
     public DatabaseReference ownerRef;
@@ -34,9 +34,9 @@ public class _3Login extends AppCompatActivity {
         setContentView(R.layout.activity__03_login);
 
         //getting items from xml file
-        key = findViewById(R.id.phone_no_3);
-        password = findViewById(R.id.password__3);
-        register = findViewById(R.id.register);
+        phoneField = findViewById(R.id.phone_no_3);
+        passwordField = findViewById(R.id.password__3);
+        registerButton = findViewById(R.id.register);
         next_btn_3 = findViewById(R.id.next_btn_3);
         login_as_owner_3 = findViewById(R.id.login_as_owner_3);
 
@@ -45,12 +45,17 @@ public class _3Login extends AppCompatActivity {
         tenantRef = FirebaseDatabase.getInstance().getReference().child("Tenant Database");
 
         ///////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////register button click
-        register.setOnClickListener(new View.OnClickListener() {
+        //////////////////////////////////////////////registerButton button click
+        registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent3 = new Intent(_3Login.this, _4Register.class);
-                startActivity(intent3);
+                if (login_as_owner_3.isChecked()) {
+                    Intent intent3 = new Intent(_3Login.this, _4Register.class);
+                    startActivity(intent3);
+                }
+                else
+                    Toast.makeText(_3Login.this, "You can only register as an owner", Toast.LENGTH_LONG).show();
+
             }
         });
 
@@ -59,47 +64,44 @@ public class _3Login extends AppCompatActivity {
         next_btn_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (login_as_owner_3.isChecked()) {
-                    //for owner
-                    final String getKey, getpass;
-                    getKey = key.getText().toString().trim();
-                    getpass = password.getText().toString().trim();
+                //getting items from phone and password field
+                final String getPhoneKey, getPass;
+                getPhoneKey = phoneField.getText().toString().trim();
+                getPass = passwordField.getText().toString().trim();
 
-                    if (getKey.isEmpty())
-                        key.setError("Input your Phone number.");
-                    else if (getpass.isEmpty())
-                        password.setError("Input your Password");
+                //for owner
+                if (login_as_owner_3.isChecked()) {
+                    if (getPhoneKey.isEmpty())
+                        phoneField.setError("Input your Phone number.");
+                    else if (getPass.isEmpty())
+                        passwordField.setError("Input your Password");
                     else
-                        ownerLogin(getKey, getpass);
+                        ownerLogin(getPhoneKey, getPass);
                 }
 
+                //for tenant
                 else {
-                    //for tenant
-                    final String getKey, getpass;
-                    getKey = key.getText().toString().trim();
-                    getpass = password.getText().toString().trim();
-
-                    if (getKey.isEmpty())
-                        key.setError("Input your Phone number.");
-                    else if (getpass.isEmpty())
-                        password.setError("Input your Password");
+                    if (getPhoneKey.isEmpty())
+                        phoneField.setError("Input your Phone number.");
+                    else if (getPass.isEmpty())
+                        passwordField.setError("Input your Password");
                     else
-                        tenantLogin(getKey, getpass);
+                        tenantLogin(getPhoneKey, getPass);
                 }
             }
         });
     }
 
-
-    /////////////////////////////owner login/////////////////////////////////
-    public void ownerLogin(final String getKey, final String getpass) {
+    /////////////////////////////////////////////////////////////////////
+    /////////////////////////////owner login/////////////////////////////
+    public void ownerLogin(final String getPhoneKey, final String getPass) {
         try {
-            ownerRef.child(getKey).addValueEventListener(new ValueEventListener() {
+            ownerRef.child(getPhoneKey).addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     try {
                         userInfo userinf = dataSnapshot.getValue(userInfo.class);
-                        if (getpass.equals(userinf.getPassword()) && getKey.equals(userinf.getPhone_no())) {
+                        if (getPass.equals(userinf.getPassword()) && getPhoneKey.equals(userinf.getPhone_no())) {
                             Toast.makeText(_3Login.this, "Login Successful", Toast.LENGTH_LONG).show();
 
                             Intent intent_3 = new Intent(_3Login.this, _11OwnerMenu.class);
@@ -118,16 +120,16 @@ public class _3Login extends AppCompatActivity {
         }
     }
 
-
+    /////////////////////////////////////////////////////////////////////////
     ///////////////////////////tenant login//////////////////////////////////
-    public void tenantLogin(final String getKey, final String getpass) {
+    public void tenantLogin(final String getPhoneKey, final String getPass) {
         try {
-            tenantRef.child(getKey).addValueEventListener(new ValueEventListener() {
+            tenantRef.child(getPhoneKey).addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     try {
                         userInfo userinf = dataSnapshot.getValue(userInfo.class);
-                        if (getpass.equals(userinf.getPassword()) && getKey.equals(userinf.getPhone_no())) {
+                        if (getPass.equals(userinf.getPassword()) && getPhoneKey.equals(userinf.getPhone_no())) {
                             Toast.makeText(_3Login.this, "Login Successful", Toast.LENGTH_LONG).show();
 
                             Intent intent_3 = new Intent(_3Login.this, _6UserMenu.class);

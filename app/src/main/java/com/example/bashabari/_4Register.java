@@ -63,7 +63,7 @@ public class _4Register extends AppCompatActivity {
                 final String phone_no = Phone_no.getText().toString().trim();
                 final String password = Password.getText().toString().trim();
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -117,7 +117,7 @@ public class _4Register extends AppCompatActivity {
 //>>>>>>> 117173720d04c30e61b5d38de1534bfc8b2d593f
                     }
                 });
-=======
+//=======
                 if( !name.isEmpty() && !address.isEmpty() && !nid_no.isEmpty() && !phone_no.isEmpty() && !password.isEmpty() ) {
                     saveToDatabase(name, address, nid_no, phone_no, password);
                     Intent intent1 = new Intent(_4Register.this, _3Login.class);
@@ -140,7 +140,7 @@ public class _4Register extends AppCompatActivity {
                         Phone_no.setError("Input your address");
                 }
 
->>>>>>> 6eb373b9eba39fd7857030fd540b8b89125afab8
+//>>>>>>> 6eb373b9eba39fd7857030fd540b8b89125afab8
 
 
             }

@@ -3,7 +3,7 @@ package com.example.bashabari;
 public class userInfo {
     private String Name, Address, Nid_no, Phone_no, Password;
 
-    public userInfo(String name, String address, String nid_no, String phone_no, String password) {
+    public userInfo(String address, String name, String nid_no, String password, String phone_no) {
         Name = name;
         Address = address;
         Nid_no = nid_no;
@@ -11,12 +11,8 @@ public class userInfo {
         Password = password;
     }
 
-    public String getName() {
-        return Name;
-    }
+    public userInfo(){
 
-    public void setName(String name) {
-        Name = name;
     }
 
     public String getAddress() {
@@ -27,6 +23,16 @@ public class userInfo {
         Address = address;
     }
 
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+
     public String getNid_no() {
         return Nid_no;
     }
@@ -35,13 +41,7 @@ public class userInfo {
         Nid_no = nid_no;
     }
 
-    public String getPhone_no() {
-        return Phone_no;
-    }
 
-    public void setPhone_no(String phone_no) {
-        Phone_no = phone_no;
-    }
 
     public String getPassword() {
         return Password;
@@ -49,5 +49,13 @@ public class userInfo {
 
     public void setPassword(String password) {
         Password = password;
+    }
+
+    public String getPhone_no() {
+        return Phone_no;
+    }
+
+    public void setPhone_no(String phone_no) {
+        Phone_no = phone_no;
     }
 }

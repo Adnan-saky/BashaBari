@@ -47,7 +47,7 @@
         android:textColor="@android:color/darker_gray"
         />
     <ImageView
-        android:id="@+id/add_notice_btn"
+        android:id="@+id/add_notice_btn_14"
         android:layout_width="150sp"
         android:layout_height="60sp"
         android:src="@drawable/add_notice_btn"
@@ -59,7 +59,7 @@
 
     <!--::::::::::::::::::::::::Notice Contents:::::::::::::::::::::::::::::-->
 
-
+    <!--
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -227,6 +227,8 @@
 
         </LinearLayout>
     </ScrollView>
+
+    -->
 
 
 

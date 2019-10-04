@@ -1,6 +1,7 @@
 package com.example.bashabari;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -55,7 +56,7 @@ public class _4Register extends AppCompatActivity {
 
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         userInfo usrinf = dataSnapshot.getValue(userInfo.class);
                         if(phone_no.equals(usrinf.getPhone_no())){
                             Toast.makeText(getApplicationContext(),"Phone Already number exists",Toast.LENGTH_LONG).show();
@@ -64,7 +65,7 @@ public class _4Register extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onCancelled(DatabaseError databaseError) {
+                    public void onCancelled(@Nullable DatabaseError databaseError) {
 
                     }
                 });

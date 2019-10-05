@@ -120,6 +120,15 @@ public class _3Login extends AppCompatActivity {
 
                             Intent intent_3 = new Intent(_3Login.this, _11OwnerMenu.class);
                             startActivity(intent_3);
+
+                            //loading condition for owner(written in the file)
+                            FileOutputStream fos0 = null;
+                            try {
+                                fos0 = openFileOutput(Stat_File, MODE_PRIVATE);
+                                fos0.write("logged_in_owner".getBytes());
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
                         }
 
                     } catch (Exception e) {
@@ -151,6 +160,15 @@ public class _3Login extends AppCompatActivity {
 
                             Intent intent_3 = new Intent(_3Login.this, _6UserMenu.class);
                             startActivity(intent_3);
+
+                            //loading condition for tenant (written in the file)
+                            FileOutputStream fos0 = null;
+                            try {
+                                fos0 = openFileOutput(Stat_File, MODE_PRIVATE);
+                                fos0.write("logged_in_tenant".getBytes());
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
                         }
                     } catch (Exception e) {
                         Toast.makeText(_3Login.this, "Invalid Phone no or Password", Toast.LENGTH_LONG).show();
@@ -169,14 +187,6 @@ public class _3Login extends AppCompatActivity {
 
     public void saveLoginInfoToFile(String address, String name, String nid_no, String password, String phone_no){
         // will save data into the files
-        FileOutputStream fos0 = null;
-        try {
-            fos0 = openFileOutput(Stat_File, MODE_PRIVATE);
-            fos0.write("logged_in".getBytes());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
         FileOutputStream fos1 = null;
         try {
             fos1 = openFileOutput(Address_File, MODE_PRIVATE);

@@ -114,9 +114,19 @@ public class _6UserMenu extends AppCompatActivity {
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     private void setContentFromDatabase() {
         //This will put the name of the logged in user. it was firstly saved into the file, then here it is read from the saved file.
+        name_title.setText(readFromFile("369nam369.txt"));
+
+        //This will put the address of the logged in user. it was firstly saved into the file, then here it is read from the saved file.
+        address_title.setText(readFromFile("369add369.txt"));
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    private String readFromFile(String File_Name){
+        //This is a file reading method, which will return the string from "File_Name" file
+        String st = null;
         FileInputStream fis0 = null;
         try {
-            fis0 =openFileInput("369nam369.txt");
+            fis0 =openFileInput(File_Name);
             InputStreamReader isr = new InputStreamReader(fis0);
             BufferedReader br = new BufferedReader(isr);
             StringBuilder sb = new StringBuilder();
@@ -126,7 +136,7 @@ public class _6UserMenu extends AppCompatActivity {
                 sb.append(text).append("\n");
             }
 
-            name_title.setText(sb.toString());
+            st = sb.toString();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -139,36 +149,7 @@ public class _6UserMenu extends AppCompatActivity {
                 }
             }
         }
-
-
-        //This will put the address of the logged in user. it was firstly saved into the file, then here it is read from the saved file.
-        FileInputStream fis1 = null;
-        try {
-            fis1 =openFileInput("369add369.txt");
-            InputStreamReader isr = new InputStreamReader(fis1);
-            BufferedReader br = new BufferedReader(isr);
-            StringBuilder sb = new StringBuilder();
-            String text;
-
-            while( (text = br.readLine()) != null ){
-                sb.append(text).append("\n");
-            }
-
-            address_title.setText(sb.toString());
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }finally {
-            if(fis0 != null) {
-                try {
-                    fis0.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-
+        return st;
     }
 
 }

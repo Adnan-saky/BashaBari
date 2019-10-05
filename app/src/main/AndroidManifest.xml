@@ -9,14 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="._17ManageTenants"/>
+
+        <activity android:name="._17ManageTenants" />
         <activity android:name="._16Settings" />
         <activity android:name="._15SendBills" />
         <activity android:name="._14Notices" />
         <activity android:name="._13RegisterTenants" />
         <activity android:name="._12MoreRequests" />
         <activity android:name="._11OwnerMenu" />
-        <activity android:name="._10OwnerHome"/>
+        <activity android:name="._10OwnerHome" />
         <activity android:name="._9Bills" />
         <activity android:name="._8Requests" />
         <activity android:name="._7MoreNotices" />
@@ -24,7 +25,8 @@
         <activity android:name="._4Register" />
         <activity android:name="._3Login" />
         <activity android:name="._2Welcome" />
-        <activity android:name="._1Welcome">
+        <activity android:name="._1Welcome"/>
+        <activity android:name="._0loading">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

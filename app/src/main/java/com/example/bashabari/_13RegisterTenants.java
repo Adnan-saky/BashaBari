@@ -64,22 +64,7 @@ public class _13RegisterTenants extends AppCompatActivity {
                 String phone_no = Phone_no.getText().toString().trim();
                 String password = Password.getText().toString().trim();
 
-                ////////////////////////////////////////////////////////////////////////////////////////
-                /*databaseReference.child(phone_no).addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        userInfo usrinf = dataSnapshot.getValue(userInfo.class);
-                        if(phone_no.equals(usrinf.getPhone_no())){
-                            Toast.makeText(getApplicationContext(),"Phone Already number exists",Toast.LENGTH_LONG).show();
-                        }
 
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });*/
 
                 //if fields are not empty:
                 if( !name.isEmpty() && !address.isEmpty() && !nid_no.isEmpty() && !phone_no.isEmpty() && !password.isEmpty() ) {
@@ -112,13 +97,6 @@ public class _13RegisterTenants extends AppCompatActivity {
     }
 
     public void saveToDatabase(String name, String address, String nid_no, String phone_no, String password){
-        //it will save registration data in database
-        userInfo tenants = new userInfo(name, address, nid_no, phone_no, password);
-        String key = phone_no;
 
-        databaseReference.child(key).setValue(tenants);
-
-        //toast for showing registration done message
-        Toast.makeText(getApplicationContext(),"Registration Done",Toast.LENGTH_LONG).show();
     }
 }

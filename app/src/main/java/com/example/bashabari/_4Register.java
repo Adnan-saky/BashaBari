@@ -66,8 +66,7 @@ public class _4Register extends AppCompatActivity {
                 //data is inputted
                 if( !name.isEmpty() && !address.isEmpty() && !nid_no.isEmpty() && !phone_no.isEmpty() && !password.isEmpty() ) {
                     saveToDatabase(name, address, nid_no, phone_no, password);
-                    Intent intent1 = new Intent(_4Register.this, _3Login.class);
-                    startActivity(intent1);
+
                 }
 
                 //else fields are empty
@@ -91,17 +90,6 @@ public class _4Register extends AppCompatActivity {
     }
 
     public void saveToDatabase(final String name, final String address, final String nid_no, final String phone_no, final String password) {
-        /*//it will save registration data in database
-        userInfo usrinf = new userInfo(address, name, nid_no, password, phone_no);
-
-        String key = phone_no;
-        databaseReference.child(key).setValue(usrinf);
-
-        //toast for showing registration done message
-        Toast.makeText(getApplicationContext(), "Registration Done", Toast.LENGTH_LONG).show();
-        */
-
-
         try {
             databaseReference.child(phone_no).addValueEventListener(new ValueEventListener() {
                 @Override
@@ -109,8 +97,7 @@ public class _4Register extends AppCompatActivity {
                     try {
                         userInfo userinf = dataSnapshot.getValue(userInfo.class);
                         if (phone_no.equals(userinf.getPhone_no())) {
-                            Toast.makeText(_4Register.this, "Phone Number already exists", Toast.LENGTH_LONG).show();
-                            return;
+                            Phone_no.setError("Phone number already exists");
                         }
 
                     } catch (Exception e) {
@@ -120,6 +107,8 @@ public class _4Register extends AppCompatActivity {
                         //toast for showing registration done message
                         Toast.makeText(getApplicationContext(), "Registration Done", Toast.LENGTH_LONG).show();
 
+                        Intent intent1 = new Intent(_4Register.this, _3Login.class);
+                        startActivity(intent1);
                     }
                 }
                 @Override

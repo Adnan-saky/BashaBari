@@ -1,8 +1,10 @@
 package com.example.bashabari;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -10,13 +12,22 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 public class _11OwnerMenu extends AppCompatActivity {
     ////creating a object to hold the id of the contents of layout 11
     private LinearLayout main_menu_layout,main_menu_layout_right;
     private RelativeLayout home_layout;
     private ImageView menu_btn, see_more_btn;
     private TextView add_tenant_btn, notices_btn, manage_tenant_btn,send_bills_btn,settings_btn,signout_btn;
-
+    private TextView name_title, address_title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +40,8 @@ public class _11OwnerMenu extends AppCompatActivity {
         home_layout = findViewById(R.id.home_layout_11);
         menu_btn = findViewById(R.id.menu_btn_11);
         see_more_btn= findViewById(R.id.see_more_btn_11);
+        name_title= findViewById(R.id.nameTitle_11);
+        address_title= findViewById(R.id.addressTitle_11);
 
         ///getting id of menu items
         add_tenant_btn = findViewById(R.id.add_tenant_btn_11);
@@ -37,6 +50,9 @@ public class _11OwnerMenu extends AppCompatActivity {
         send_bills_btn = findViewById(R.id.send_bills_btn_11);
         settings_btn = findViewById(R.id.settings_btn_11);
         signout_btn = findViewById(R.id.signout_11);
+
+        //for showing name and address
+        setContentFromDatabase();
 
 
         menu_btn.setOnClickListener(new View.OnClickListener() {
@@ -106,12 +122,85 @@ public class _11OwnerMenu extends AppCompatActivity {
         });
 
         signout_btn.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View view) {
+                FileOutputStream fos0 = null;
+                try {
+                    // edits Stat File and sets the text to logged_out
+                    fos0 = openFileOutput("369sta369.txt", MODE_PRIVATE);
+                    fos0.write("logged_out".getBytes());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
                 Intent intent11 = new Intent(_11OwnerMenu.this, _3Login.class);
                 startActivity(intent11);
             }
         });
 
     }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    private void setContentFromDatabase() {
+        //This will put the name of the logged in user. it was firstly saved into the file, then here it is read from the saved file.
+        FileInputStream fis0 = null;
+        try {
+            fis0 =openFileInput("369nam369.txt");
+            InputStreamReader isr = new InputStreamReader(fis0);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String text;
+
+            while( (text = br.readLine()) != null ){
+                sb.append(text).append("\n");
+            }
+
+            name_title.setText(sb.toString());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            if(fis0 != null) {
+                try {
+                    fis0.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+        //This will put the address of the logged in user. it was firstly saved into the file, then here it is read from the saved file.
+        FileInputStream fis1 = null;
+        try {
+            fis1 =openFileInput("369add369.txt");
+            InputStreamReader isr = new InputStreamReader(fis1);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String text;
+
+            while( (text = br.readLine()) != null ){
+                sb.append(text).append("\n");
+            }
+
+            address_title.setText(sb.toString());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            if(fis0 != null) {
+                try {
+                    fis0.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+    }
+
+
+
 }

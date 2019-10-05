@@ -1,14 +1,22 @@
 package com.example.bashabari;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class _6UserMenu extends AppCompatActivity {
     ////creating a object to hold the id of the contents of layout 6
@@ -18,6 +26,7 @@ public class _6UserMenu extends AppCompatActivity {
     private ImageView see_more_6;
     private TextView bill_6;
     private TextView request_6, signout_btn;
+    private TextView name_title, address_title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +42,11 @@ public class _6UserMenu extends AppCompatActivity {
         bill_6 = findViewById(R.id.bills_6);
         request_6 = findViewById(R.id.request_6);
         see_more_6 = findViewById(R.id.see_more_6);
+        name_title= findViewById(R.id.nameTitle_6);
+        address_title= findViewById(R.id.addressTitle_6);
+
+        //for showing name and address
+        setContentFromDatabase();
 
         menu_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,12 +91,84 @@ public class _6UserMenu extends AppCompatActivity {
         });
 
         signout_btn.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View view) {
+                FileOutputStream fos0 = null;
+                try {
+                    // edits Stat File and sets the text to logged_out
+                    fos0 = openFileOutput("369sta369.txt", MODE_PRIVATE);
+                    fos0.write("logged_out".getBytes());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
                 Intent intent_06 = new Intent(_6UserMenu.this, _3Login.class);
                 startActivity(intent_06);
             }
         });
 
     }
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    private void setContentFromDatabase() {
+        //This will put the name of the logged in user. it was firstly saved into the file, then here it is read from the saved file.
+        FileInputStream fis0 = null;
+        try {
+            fis0 =openFileInput("369nam369.txt");
+            InputStreamReader isr = new InputStreamReader(fis0);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String text;
+
+            while( (text = br.readLine()) != null ){
+                sb.append(text).append("\n");
+            }
+
+            name_title.setText(sb.toString());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            if(fis0 != null) {
+                try {
+                    fis0.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+        //This will put the address of the logged in user. it was firstly saved into the file, then here it is read from the saved file.
+        FileInputStream fis1 = null;
+        try {
+            fis1 =openFileInput("369add369.txt");
+            InputStreamReader isr = new InputStreamReader(fis1);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String text;
+
+            while( (text = br.readLine()) != null ){
+                sb.append(text).append("\n");
+            }
+
+            address_title.setText(sb.toString());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            if(fis0 != null) {
+                try {
+                    fis0.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+    }
+
 }

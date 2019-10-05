@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -18,8 +19,19 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
 public class _3Login extends AppCompatActivity {
-    //variable to store views
+    //file name declaration
+    public static final String Stat_File = "369sta369.txt";
+    public static final String Address_File = "369add369.txt";
+    public static final String Name_File = "369nam369.txt";
+    public static final String Nid_File = "369nid369.txt";
+    public static final String Password_File = "369pas369.txt";
+    public static final String Phone_File = "369pho369.txt";
+
+    /////variable to store views
     public EditText phoneField, passwordField;
     public TextView registerButton;
     public ImageView next_btn_3;
@@ -103,10 +115,13 @@ public class _3Login extends AppCompatActivity {
                         userInfo userinf = dataSnapshot.getValue(userInfo.class);
                         if (getPass.equals(userinf.getPassword()) && getPhoneKey.equals(userinf.getPhone_no())) {
                             Toast.makeText(_3Login.this, "Login Successful", Toast.LENGTH_LONG).show();
+                            //passes userdata which we got from database
+                            saveLoginInfoToFile(userinf.getAddress(), userinf.getName(), userinf.getNid_no(), userinf.getPassword(), userinf.getPhone_no());
 
                             Intent intent_3 = new Intent(_3Login.this, _11OwnerMenu.class);
                             startActivity(intent_3);
                         }
+
                     } catch (Exception e) {
                         Toast.makeText(_3Login.this, "Invalid Phone no or Password", Toast.LENGTH_LONG).show();
                     }
@@ -131,6 +146,8 @@ public class _3Login extends AppCompatActivity {
                         userInfo userinf = dataSnapshot.getValue(userInfo.class);
                         if (getPass.equals(userinf.getPassword()) && getPhoneKey.equals(userinf.getPhone_no())) {
                             Toast.makeText(_3Login.this, "Login Successful", Toast.LENGTH_LONG).show();
+                            //passes userdata which we got from database
+                            saveLoginInfoToFile(userinf.getAddress(), userinf.getName(), userinf.getNid_no(), userinf.getPassword(), userinf.getPhone_no());
 
                             Intent intent_3 = new Intent(_3Login.this, _6UserMenu.class);
                             startActivity(intent_3);
@@ -147,6 +164,60 @@ public class _3Login extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+
+    public void saveLoginInfoToFile(String address, String name, String nid_no, String password, String phone_no){
+        // will save data into the files
+        FileOutputStream fos0 = null;
+        try {
+            fos0 = openFileOutput(Stat_File, MODE_PRIVATE);
+            fos0.write("logged_in".getBytes());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        FileOutputStream fos1 = null;
+        try {
+            fos1 = openFileOutput(Address_File, MODE_PRIVATE);
+            fos1.write(address.getBytes());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        FileOutputStream fos2 = null;
+        try {
+            fos2 = openFileOutput(Name_File, MODE_PRIVATE);
+            fos2.write(name.getBytes());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        FileOutputStream fos3 = null;
+        try {
+            fos3 = openFileOutput(Nid_File, MODE_PRIVATE);
+            fos3.write(nid_no.getBytes());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        FileOutputStream fos4 = null;
+        try {
+            fos4 = openFileOutput(Password_File, MODE_PRIVATE);
+            fos4.write(password.getBytes());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        FileOutputStream fos5 = null;
+        try {
+            fos5 = openFileOutput(Phone_File, MODE_PRIVATE);
+            fos5.write(phone_no.getBytes());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
     }
 }
 

@@ -89,7 +89,7 @@
 
         <!--:::::::::::::::::::::tenant name::::::::::::::::::::::::-->
         <TextView
-            android:id="@+id/nametext"
+            android:id="@+id/nameTitle_6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tenant_profile_pic"
@@ -100,10 +100,10 @@
             android:textSize="30sp" />
         <!--:::::::::::::::::::::Address::::::::::::::::::::::::-->
         <TextView
-            android:id="@+id/adress_text"
+            android:id="@+id/addressTitle_6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/nametext"
+            android:layout_below="@+id/nameTitle_6"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/futura_md_bt"
             android:paddingBottom="20sp"
@@ -116,13 +116,13 @@
             android:id="@+id/info_bg"
             android:layout_width="match_parent"
             android:layout_height="100sp"
-            android:layout_below="@+id/adress_text"
+            android:layout_below="@+id/addressTitle_6"
             android:src="@drawable/home_info_bg" />
         <LinearLayout
             android:id="@+id/info_nos"
             android:layout_width="match_parent"
             android:layout_height="50sp"
-            android:layout_below="@+id/adress_text"
+            android:layout_below="@+id/addressTitle_6"
             android:gravity="center_horizontal"
             android:paddingTop="10sp">
 
@@ -130,7 +130,7 @@
                 android:id="@+id/due_bills_no"
                 android:layout_width="170sp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/nametext"
+                android:layout_below="@+id/nameTitle_6"
                 android:fontFamily="@font/microsoft_himalaya"
                 android:gravity="center_horizontal"
                 android:text="3"
@@ -140,7 +140,7 @@
                 android:id="@+id/notice_no"
                 android:layout_width="170sp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/nametext"
+                android:layout_below="@+id/nameTitle_6"
                 android:fontFamily="@font/microsoft_himalaya"
                 android:gravity="center_horizontal"
                 android:text="38"
@@ -160,7 +160,7 @@
                 android:id="@+id/due_bill_text"
                 android:layout_width="170sp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/nametext"
+                android:layout_below="@+id/nameTitle_6"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/futura_md_bt"
                 android:gravity="center_horizontal"
@@ -171,7 +171,7 @@
                 android:id="@+id/notice_text"
                 android:layout_width="170sp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/nametext"
+                android:layout_below="@+id/nameTitle_6"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/futura_md_bt"
                 android:gravity="center_horizontal"
@@ -180,7 +180,7 @@
         </LinearLayout>
 
         <!--:::::::::::::::::::: :Recent text ::::::::::::::::::::::::-->
-        ress
+
         <TextView
             android:id="@+id/recent_text"
             android:layout_width="wrap_content"

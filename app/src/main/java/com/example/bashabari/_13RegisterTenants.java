@@ -16,14 +16,19 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class _13RegisterTenants extends AppCompatActivity {
     ////creating a object to hold the id of arrow button of layout 13
     private ImageView arrow_btn;
     private ImageView reg_btn;
-
-    DatabaseReference databaseReference;
+    DatabaseReference TenantReference;
     private EditText Name, Address, Nid_no, Phone_no, Password;
 
+    //////////////////////////on create
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +36,7 @@ public class _13RegisterTenants extends AppCompatActivity {
 
 
         //getting items from xml file
-        databaseReference = FirebaseDatabase.getInstance().getReference("Tenant Database");
+        TenantReference = FirebaseDatabase.getInstance().getReference("Tenant Database");
 
         Name = findViewById(R.id.reg_name__13);
         Address = findViewById(R.id.reg_address__13);
@@ -58,20 +63,21 @@ public class _13RegisterTenants extends AppCompatActivity {
             //Tick Button
             @Override
             public void onClick(View view) {
-                String name = Name.getText().toString().trim();
-                String address = Address.getText().toString().trim();
-                String nid_no = Nid_no.getText().toString().trim();
-                String phone_no = Phone_no.getText().toString().trim();
-                String password = Password.getText().toString().trim();
+                final String name = Name.getText().toString().trim();
+                final String address = Address.getText().toString().trim();
+                final String nid_no = Nid_no.getText().toString().trim();
+                final String phone_no = Phone_no.getText().toString().trim();
+                final String password = Password.getText().toString().trim();
 
 
 
                 //if fields are not empty:
                 if( !name.isEmpty() && !address.isEmpty() && !nid_no.isEmpty() && !phone_no.isEmpty() && !password.isEmpty() ) {
+                    saveToDatabase(name, address, nid_no, phone_no, password);
+                    /*
                     Intent intent1 = new Intent(_13RegisterTenants.this, _11OwnerMenu.class);
                     startActivity(intent1);
-
-                    saveToDatabase(name, address, nid_no, phone_no, password);
+                    */
                 }
 
                 //else fields are empty
@@ -96,7 +102,71 @@ public class _13RegisterTenants extends AppCompatActivity {
         });
     }
 
-    public void saveToDatabase(String name, String address, String nid_no, String phone_no, String password){
+    public void saveToDatabase(final String name, final String address, final String nid_no, final String phone_no, final String password){
+        //this will read owner's number from the file
+        final String owner_no;
+        owner_no = readFromFile("369pho369.txt").trim();
 
+        try {
+            TenantReference.child(phone_no).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    try {
+                        tenantInfo userinf = dataSnapshot.getValue(tenantInfo.class);
+                        if (phone_no.equals(userinf.getPhone_no())) {
+                            Phone_no.setError("Phone number already exists");
+                        }
+
+                    } catch (Exception e) {
+                        tenantInfo usrinf = new tenantInfo(address, name, nid_no, owner_no, password, phone_no);
+                        String key = phone_no;
+                        TenantReference.child(key).setValue(usrinf);
+                        //toast for showing registration done message
+                        Toast.makeText(getApplicationContext(), "Registration Done", Toast.LENGTH_LONG).show();
+
+                        Intent intent1 = new Intent(_13RegisterTenants.this, _11OwnerMenu.class);
+                        startActivity(intent1);
+                    }
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    private String readFromFile(String File_Name){
+        //This is a file reading method, which will return the string from "File_Name" file
+        String st = null;
+        FileInputStream fis0 = null;
+        try {
+            fis0 =openFileInput(File_Name);
+            InputStreamReader isr = new InputStreamReader(fis0);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String text;
+
+            while( (text = br.readLine()) != null ){
+                sb.append(text).append("\n");
+            }
+
+            st = sb.toString();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            if(fis0 != null) {
+                try {
+                    fis0.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return st;
+        //returns string
     }
 }

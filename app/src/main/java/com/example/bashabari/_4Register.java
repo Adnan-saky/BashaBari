@@ -1,7 +1,6 @@
 package com.example.bashabari;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -22,7 +21,7 @@ public class _4Register extends AppCompatActivity {
     ///////////////////////variable declaration for views
     private ImageView next_btn;
     private TextView back_login_btn;
-    DatabaseReference databaseReference;
+    DatabaseReference ownerReference;
     private EditText Name, Address, Nid_no, Phone_no, Password;
 
     //////////////////////////on create
@@ -31,8 +30,10 @@ public class _4Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__04_register);
 
+
         //getting items from xml file
-        databaseReference = FirebaseDatabase.getInstance().getReference("Owner Database");
+        ownerReference = FirebaseDatabase.getInstance().getReference("Owner Database");
+
         next_btn = findViewById(R.id.next_btn_4);
         back_login_btn = findViewById(R.id.back_login_4);
         Name = findViewById(R.id.reg_name__4);
@@ -91,19 +92,19 @@ public class _4Register extends AppCompatActivity {
 
     public void saveToDatabase(final String name, final String address, final String nid_no, final String phone_no, final String password) {
         try {
-            databaseReference.child(phone_no).addValueEventListener(new ValueEventListener() {
+            ownerReference.child(phone_no).addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     try {
-                        userInfo userinf = dataSnapshot.getValue(userInfo.class);
+                        ownerInfo userinf = dataSnapshot.getValue(ownerInfo.class);
                         if (phone_no.equals(userinf.getPhone_no())) {
                             Phone_no.setError("Phone number already exists");
                         }
 
                     } catch (Exception e) {
-                        userInfo usrinf = new userInfo(address, name, nid_no, password, phone_no);
+                        ownerInfo usrinf = new ownerInfo(address, name, nid_no, password, phone_no);
                         String key = phone_no;
-                        databaseReference.child(key).setValue(usrinf);
+                        ownerReference.child(key).setValue(usrinf);
                         //toast for showing registration done message
                         Toast.makeText(getApplicationContext(), "Registration Done", Toast.LENGTH_LONG).show();
 

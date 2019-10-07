@@ -150,6 +150,7 @@ public class _6UserMenu extends AppCompatActivity {
             }
         }
         return st;
+        //returns string
     }
 
 }

@@ -1,9 +1,9 @@
 package com.example.bashabari;
 
-public class userInfo {
-    private String Name, Address, Nid_no, Phone_no, Password;
+public class ownerInfo {
+    private String Address ,Name , Nid_no, Password, Phone_no;
 
-    public userInfo(String address, String name, String nid_no, String password, String phone_no) {
+    public ownerInfo(String address, String name, String nid_no, String password, String phone_no) {
         Name = name;
         Address = address;
         Nid_no = nid_no;
@@ -11,7 +11,7 @@ public class userInfo {
         Password = password;
     }
 
-    public userInfo(){
+    public ownerInfo(){
 
     }
 

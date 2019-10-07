@@ -103,7 +103,9 @@
             android:layout_height="100sp"
             android:layout_below="@+id/ownertext"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/profile_pic" />
+            android:src="@drawable/profile_pic"
+            android:layout_marginBottom="15sp"
+            />
 
         <!--:::::::::::::::::::::::::::Profile picture;:::::::::::::::::::::-->
         <ImageView
@@ -213,7 +215,7 @@
             android:layout_below="@+id/owner_profile_pic"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/futura_md_bt"
-            android:paddingTop="10sp"
+            android:paddingTop="20sp"
             android:text=""
             android:textSize="30sp" />
         <!--:::::::::::::::::::::request background::::::::::::::::::::::::-->
@@ -225,8 +227,9 @@
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/futura_md_bt"
             android:paddingBottom="20sp"
+
             android:text=""
-            android:textSize="15sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/recentreq_text"

@@ -85,7 +85,8 @@
             android:layout_height="100sp"
             android:layout_below="@+id/tenanttext"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/profile_pic" />
+            android:src="@drawable/profile_pic"
+            android:layout_marginBottom="15sp"/>
 
         <!--:::::::::::::::::::::tenant name::::::::::::::::::::::::-->
         <TextView

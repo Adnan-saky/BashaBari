@@ -216,7 +216,7 @@
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/futura_md_bt"
             android:paddingTop="20sp"
-            android:text=""
+            android:text="......................"
             android:textSize="30sp" />
         <!--:::::::::::::::::::::request background::::::::::::::::::::::::-->
         <TextView
@@ -227,8 +227,7 @@
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/futura_md_bt"
             android:paddingBottom="20sp"
-
-            android:text=""
+            android:text="...................."
             android:textSize="18sp" />
 
         <TextView

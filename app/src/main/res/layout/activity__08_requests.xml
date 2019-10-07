@@ -27,7 +27,7 @@
 
     <!--:::::::::::::::::::::::::::edit box::::::::::::::::::::::::::::::::-->
     <EditText
-        android:id="@+id/edit_rq_box"
+        android:id="@+id/edit_rq_box_8"
         android:layout_width="match_parent"
         android:layout_height="100sp"
         android:layout_below="@+id/notice_text2"
@@ -41,17 +41,17 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_rq_box"
+        android:layout_below="@+id/edit_rq_box_8"
         android:paddingLeft="10sp"
         android:text="11/150"
         android:textColor="@android:color/darker_gray"
         />
     <ImageView
-        android:id="@+id/add_rq_btn"
+        android:id="@+id/add_rq_btn_8"
         android:layout_width="150sp"
         android:layout_height="60sp"
         android:src="@drawable/add_request_btn"
-        android:layout_below="@+id/edit_rq_box"
+        android:layout_below="@+id/edit_rq_box_8"
         android:layout_alignParentRight="true"
         android:layout_marginRight="10sp"
         android:layout_marginTop="10sp"
@@ -59,11 +59,11 @@
 
     <!--::::::::::::::::::::::::Notice Contents:::::::::::::::::::::::::::::-->
 
-
+    <!--
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/add_rq_btn"
+        android:layout_below="@id/add_rq_btn_8"
         >
         <LinearLayout
             android:layout_width="match_parent"
@@ -143,4 +143,6 @@
 
         </LinearLayout>
     </ScrollView>
+    -->
+
 </RelativeLayout>

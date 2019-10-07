@@ -21,15 +21,20 @@ import com.google.firebase.database.ValueEventListener;
 import java.io.FileOutputStream;
 
 public class _3Login extends AppCompatActivity {
-    //file name declaration
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
+    //.................................file name declaration.........................................//
     public static final String Stat_File = "369sta369.txt";
     public static final String Address_File = "369add369.txt";
     public static final String Name_File = "369nam369.txt";
     public static final String Nid_File = "369nid369.txt";
     public static final String Password_File = "369pas369.txt";
     public static final String Phone_File = "369pho369.txt";
+    public static final String T_Owner_File = "369t_ow369.txt";
+    //all files are saved in Root Storage/data/user/0/com.example.bashabari/files
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-    /////variable to store views
+
+    //...............................variable to store views
     public EditText phoneField, passwordField;
     public TextView registerButton;
     public ImageView next_btn_3;
@@ -37,7 +42,7 @@ public class _3Login extends AppCompatActivity {
     public DatabaseReference ownerRef;
     public DatabaseReference tenantRef;
 
-    //////////////////////////on create
+    //.................................on create
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,8 +59,8 @@ public class _3Login extends AppCompatActivity {
         ownerRef = FirebaseDatabase.getInstance().getReference().child("Owner Database");
         tenantRef = FirebaseDatabase.getInstance().getReference().child("Tenant Database");
 
-        ///////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////registerButton button click
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //...................................registerButton button click......................................//
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,8 +74,8 @@ public class _3Login extends AppCompatActivity {
             }
         });
 
-        /////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////tick button click
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //.................................................tick button click....................................//
         next_btn_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,7 +84,7 @@ public class _3Login extends AppCompatActivity {
                 getPhoneKey = phoneField.getText().toString().trim();
                 getPass = passwordField.getText().toString().trim();
 
-                //for owner
+                //..........................for owner
                 if (login_as_owner_3.isChecked()) {
                     if (getPhoneKey.isEmpty())
                         phoneField.setError("Input your Phone number.");
@@ -89,7 +94,7 @@ public class _3Login extends AppCompatActivity {
                         ownerLogin(getPhoneKey, getPass);
                 }
 
-                //for tenant
+                //..........................for tenant
                 else {
                     if (getPhoneKey.isEmpty())
                         phoneField.setError("Input your Phone number.");
@@ -102,8 +107,8 @@ public class _3Login extends AppCompatActivity {
         });
     }
 
-    /////////////////////////////////////////////////////////////////////
-    /////////////////////////////owner login/////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
+    //..........................................owner login..............................................//
     public void ownerLogin(final String getPhoneKey, final String getPass) {
         try {
             ownerRef.child(getPhoneKey).addValueEventListener(new ValueEventListener() {
@@ -142,8 +147,8 @@ public class _3Login extends AppCompatActivity {
         }
     }
 
-    /////////////////////////////////////////////////////////////////////////
-    ///////////////////////////tenant login//////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //............................................tenant login...................................................//
     public void tenantLogin(final String getPhoneKey, final String getPass) {
         try {
             tenantRef.child(getPhoneKey).addValueEventListener(new ValueEventListener() {
@@ -155,6 +160,16 @@ public class _3Login extends AppCompatActivity {
                             Toast.makeText(_3Login.this, "Login Successful", Toast.LENGTH_LONG).show();
                             //passes userdata which we got from database
                             saveLoginInfoToFile(userinf.getAddress(), userinf.getName(), userinf.getNid_no(), userinf.getPassword(), userinf.getPhone_no());
+
+                            //........it will save the tenant's owner number to the file
+                            FileOutputStream fos1 = null;
+                            try {
+                                fos1 = openFileOutput(T_Owner_File, MODE_PRIVATE);
+                                fos1.write(userinf.getOwner().getBytes());
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+
 
                             Intent intent_3 = new Intent(_3Login.this, _6UserMenu.class);
                             startActivity(intent_3);
@@ -182,7 +197,8 @@ public class _3Login extends AppCompatActivity {
         }
     }
 
-
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //.............................Saving the database info to local file........................................//
     public void saveLoginInfoToFile(String address, String name, String nid_no, String password, String phone_no){
         // will save data into the files
         FileOutputStream fos1 = null;
@@ -224,8 +240,7 @@ public class _3Login extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
+
 }
 

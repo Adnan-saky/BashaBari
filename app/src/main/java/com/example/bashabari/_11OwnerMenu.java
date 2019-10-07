@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class _11OwnerMenu extends AppCompatActivity {
-    ////creating a object to hold the id of the contents of layout 11
+    //.......................creating a object to hold the id of the contents of layout 11
     private LinearLayout main_menu_layout,main_menu_layout_right;
     private RelativeLayout home_layout;
     private ImageView menu_btn, see_more_btn;
@@ -31,7 +31,7 @@ public class _11OwnerMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__11_owner_menu);
 
-        ////getting the id of the contents of layout 11
+        //......................................getting the id of the contents of layout 11
         main_menu_layout = findViewById(R.id.main_menu_layout_11);
         main_menu_layout_right = findViewById(R.id.main_menu_layout_11right);
         home_layout = findViewById(R.id.home_layout_11);
@@ -40,7 +40,7 @@ public class _11OwnerMenu extends AppCompatActivity {
         name_title= findViewById(R.id.nameTitle_11);
         address_title= findViewById(R.id.addressTitle_11);
 
-        ///getting id of menu items
+        //..............................getting id of menu items
         add_tenant_btn = findViewById(R.id.add_tenant_btn_11);
         notices_btn = findViewById(R.id.notices_btn_11);
         manage_tenant_btn = findViewById(R.id.manage_tenant_btn_11);
@@ -48,10 +48,11 @@ public class _11OwnerMenu extends AppCompatActivity {
         settings_btn = findViewById(R.id.settings_btn_11);
         signout_btn = findViewById(R.id.signout_11);
 
-        //for showing name and address
+        //...........................for showing name and address
         setContentFromDatabase();
 
-
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //......................................menu button click...............................................//
         menu_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -139,6 +140,7 @@ public class _11OwnerMenu extends AppCompatActivity {
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //.....................................this method is for showing name and address............................................//
     private void setContentFromDatabase() {
         //This will put the name of the logged in user. it was firstly saved into the file, then here it is read from the saved file.
         name_title.setText(readFromFile("369nam369.txt"));
@@ -147,7 +149,8 @@ public class _11OwnerMenu extends AppCompatActivity {
         address_title.setText(readFromFile("369add369.txt"));
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //............................Reading database info from locally saved file..................................//
     private String readFromFile(String File_Name){
         //This is a file reading method, which will return the string from "File_Name" file
         String st = null;

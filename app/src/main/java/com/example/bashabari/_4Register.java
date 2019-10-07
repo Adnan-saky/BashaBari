@@ -18,20 +18,20 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class _4Register extends AppCompatActivity {
-    ///////////////////////variable declaration for views
+    //...............................variable declaration for views
     private ImageView next_btn;
     private TextView back_login_btn;
     DatabaseReference ownerReference;
     private EditText Name, Address, Nid_no, Phone_no, Password;
 
-    //////////////////////////on create
+    //..................................on create
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__04_register);
 
 
-        //getting items from xml file
+        //.........................getting items from xml file
         ownerReference = FirebaseDatabase.getInstance().getReference("Owner Database");
 
         next_btn = findViewById(R.id.next_btn_4);
@@ -42,8 +42,8 @@ public class _4Register extends AppCompatActivity {
         Phone_no = findViewById(R.id.reg_Phn_no_4);
         Password = findViewById(R.id.reg_pass__4);
 
-        /////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////back button click
+        /////////////////////////////////////////////////////////////////////////////////////////////////////
+        //........................................back button click........................................//
         back_login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,8 +52,8 @@ public class _4Register extends AppCompatActivity {
             }
         });
 
-        /////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////next button click
+        /////////////////////////////////////////////////////////////////////////////////////////////////////
+        //.........................................next button click.......................................//
         next_btn.setOnClickListener(new View.OnClickListener() {
             //Tick Button click
             @Override
@@ -64,13 +64,12 @@ public class _4Register extends AppCompatActivity {
                 final String phone_no = Phone_no.getText().toString().trim();
                 final String password = Password.getText().toString().trim();
 
-                //data is inputted
+                //................data is inputted
                 if( !name.isEmpty() && !address.isEmpty() && !nid_no.isEmpty() && !phone_no.isEmpty() && !password.isEmpty() ) {
                     saveToDatabase(name, address, nid_no, phone_no, password);
-
                 }
 
-                //else fields are empty
+                //..................else fields are empty
                 else{
                     Toast.makeText(getApplicationContext(),"Empty Input Field",Toast.LENGTH_SHORT).show();
 
@@ -90,6 +89,8 @@ public class _4Register extends AppCompatActivity {
         });
     }
 
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //.......................................Saving info to database.............................................//
     public void saveToDatabase(final String name, final String address, final String nid_no, final String phone_no, final String password) {
         try {
             ownerReference.child(phone_no).addValueEventListener(new ValueEventListener() {

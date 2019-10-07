@@ -97,7 +97,7 @@
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/futura_md_bt"
             android:paddingTop="10sp"
-            android:text="Elizabeth Olsen"
+            android:text=".........................."
             android:textSize="30sp" />
         <!--:::::::::::::::::::::Address::::::::::::::::::::::::-->
         <TextView
@@ -108,8 +108,8 @@
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/futura_md_bt"
             android:paddingBottom="20sp"
-            android:text="Mirpur, Dhaka"
-            android:textSize="15sp" />
+            android:text="..................."
+            android:textSize="18sp" />
 
         <!--:::::::::::::::::::::info box::::::::::::::::::::::::-->
 

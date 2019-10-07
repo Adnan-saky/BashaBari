@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class _6UserMenu extends AppCompatActivity {
-    ////creating a object to hold the id of the contents of layout 6
+    //..................creating a object to hold the id of the contents of layout 6
     LinearLayout main_menu_layout, main_menu_layout_right;
     RelativeLayout home_layout;
     private ImageView menu_btn;
@@ -33,7 +33,7 @@ public class _6UserMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__06_user_menu);
 
-        ////getting the id of the contents of layout 11
+        //.....................getting the id of the contents of layout 11
         main_menu_layout = findViewById(R.id.main_menu_layout_6);
         home_layout = findViewById(R.id.home_layout_6);
         main_menu_layout_right = findViewById(R.id.main_menu_layout_6right);
@@ -45,9 +45,11 @@ public class _6UserMenu extends AppCompatActivity {
         name_title= findViewById(R.id.nameTitle_6);
         address_title= findViewById(R.id.addressTitle_6);
 
-        //for showing name and address
+        //.............this method is for showing name and address
         setContentFromDatabase();
 
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //......................................menu button click...............................................//
         menu_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,6 +114,7 @@ public class _6UserMenu extends AppCompatActivity {
 
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //.....................................this method is for showing name and address............................................//
     private void setContentFromDatabase() {
         //This will put the name of the logged in user. it was firstly saved into the file, then here it is read from the saved file.
         name_title.setText(readFromFile("369nam369.txt"));
@@ -120,7 +123,8 @@ public class _6UserMenu extends AppCompatActivity {
         address_title.setText(readFromFile("369add369.txt"));
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //............................Reading database info from locally saved file..................................//
     private String readFromFile(String File_Name){
         //This is a file reading method, which will return the string from "File_Name" file
         String st = null;

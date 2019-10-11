@@ -67,91 +67,13 @@
         />
 
     <!--::::::::::::::::::::::::Notice Contents:::::::::::::::::::::::::::::-->
-
-    <!--
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/request_recyclerview_8"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/add_rq_btn_8"
-        >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/rectangle"
-            android:padding="35sp"
-            >
+        android:layout_height="match_parent"
+        android:layout_below="@+id/add_rq_btn_8"
+        android:padding="20dp"
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/recentreq_text"
-                android:text="Elizabeth Olsen"
-                android:fontFamily="@font/microsoft_himalaya"
-                android:textSize="35sp"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                android:layout_width="200sp"
-                android:layout_height="wrap_content"
-                android:text="help"
-                android:textSize="15dp"
-                android:layout_centerHorizontal="true"
-                android:paddingBottom="15sp"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Elizabeth Olsen"
-                android:fontFamily="@font/microsoft_himalaya"
-                android:textSize="35sp"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                android:layout_width="200sp"
-                android:layout_height="wrap_content"
-                android:text="Where is electricity"
-                android:textSize="15dp"
-                android:layout_centerHorizontal="true"
-                android:paddingBottom="15sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Elizabeth Olsen"
-                android:fontFamily="@font/microsoft_himalaya"
-                android:textSize="35sp"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                android:layout_width="200sp"
-                android:layout_height="wrap_content"
-                android:text="Fix bathroom"
-                android:textSize="15dp"
-                android:layout_centerHorizontal="true"
-                android:paddingBottom="15sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/reqst_tenant_name"
-                android:text="Elizabeth Olsen"
-                android:fontFamily="@font/microsoft_himalaya"
-                android:textSize="35sp"
-                android:layout_centerHorizontal="true"/>
-
-            <TextView
-                android:layout_width="200sp"
-                android:layout_height="wrap_content"
-                android:id="@+id/reqst_text_content"
-                android:text="My shower is broken"
-                android:textSize="15dp"
-                android:layout_centerHorizontal="true"
-                android:paddingBottom="15sp"/>
-
-
-        </LinearLayout>
-    </ScrollView>
-    -->
+        />
 
 </RelativeLayout>

@@ -116,6 +116,7 @@ public class _8Requests extends AppCompatActivity {
                         requestList.add(req);
                     }
                     adapter.notifyDataSetChanged();
+
                 }
             }
 

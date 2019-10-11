@@ -22,13 +22,13 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-<<<<<<< HEAD
+//<<<<<<< HEAD
     implementation 'androidx.appcompat:appcompat:1.1.0'
-=======
-    implementation 'androidx.appcompat:appcompat:1.0.2'
+//=======
+    implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
     implementation 'com.android.support:cardview-v7:28.0.0'
->>>>>>> 10036ead71f2fd048b44373cbda77c0b14185be0
+//>>>>>>> 10036ead71f2fd048b44373cbda77c0b14185be0
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'com.airbnb.android:lottie:2.5.5'
     testImplementation 'junit:junit:4.12'

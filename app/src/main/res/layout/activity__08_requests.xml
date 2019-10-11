@@ -6,6 +6,15 @@
     android:padding="35sp">
     <!--:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
     <!--::::::::::::::::::::::::::Notices:::::::::::::::::::::::::::::-->
+
+    <FrameLayout
+        android:id="@+id/hide_keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:onClick="hidekeyboard" >
+    </FrameLayout>
+
+
     <TextView
         android:id="@+id/notice_text2"
         android:layout_width="wrap_content"

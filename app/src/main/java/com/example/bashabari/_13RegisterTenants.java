@@ -3,9 +3,11 @@ package com.example.bashabari;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -73,7 +75,13 @@ public class _13RegisterTenants extends AppCompatActivity {
 
                 //if fields are not empty:
                 if( !name.isEmpty() && !address.isEmpty() && !nid_no.isEmpty() && !phone_no.isEmpty() && !password.isEmpty() ) {
-                    saveToDatabase(name, address, nid_no, phone_no, password);
+
+                    if(password.length()<6)
+                        Password.setError("Input minimum 6 character password");
+                    else if(phone_no.length() != 11)
+                        Phone_no.setError("Invalid phone number");
+                    else
+                        saveToDatabase(name, address, nid_no, phone_no, password);
                     /*
                     Intent intent1 = new Intent(_13RegisterTenants.this, _11OwnerMenu.class);
                     startActivity(intent1);
@@ -169,4 +177,11 @@ public class _13RegisterTenants extends AppCompatActivity {
         return st;
         //returns string
     }
+
+
+    public void hidekeyboard(View view) {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(),0);
+    }
+
 }

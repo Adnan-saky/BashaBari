@@ -3,7 +3,20 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:background="@drawable/login_bg"
     android:padding="25sp"
+
+
+
     >
+
+    <FrameLayout
+        android:id="@+id/hide_keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:onClick="hidekeyboard" >
+    </FrameLayout>
+
+
+
     <ImageView
         android:id="@+id/back_arrow_btn__4"
         android:layout_width="40sp"
@@ -152,5 +165,12 @@
         android:layout_alignParentBottom="true"
         android:src="@drawable/tick_button"
         />
+
+
+
+
+
+
+
 
 </RelativeLayout>

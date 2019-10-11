@@ -3,9 +3,11 @@ package com.example.bashabari;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -66,7 +68,14 @@ public class _4Register extends AppCompatActivity {
 
                 //................data is inputted
                 if( !name.isEmpty() && !address.isEmpty() && !nid_no.isEmpty() && !phone_no.isEmpty() && !password.isEmpty() ) {
-                    saveToDatabase(name, address, nid_no, phone_no, password);
+
+
+                            if(password.length()<6)
+                                Password.setError("Input minimum 6 character password");
+                            else if(phone_no.length() != 11)
+                                Phone_no.setError("Invalid phone number");
+                            else
+                                saveToDatabase(name, address, nid_no, phone_no, password);
                 }
 
                 //..................else fields are empty
@@ -82,7 +91,7 @@ public class _4Register extends AppCompatActivity {
                     else if(password.isEmpty())
                         Password.setError("Input a passwordField");
                     else if(phone_no.isEmpty())
-                        Phone_no.setError("Input your address");
+                        Phone_no.setError("Input your phone number");
                 }
 
             }
@@ -121,6 +130,13 @@ public class _4Register extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+    public void hidekeyboard(View view) {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(),0);
+    }
+
+
 }
 
 

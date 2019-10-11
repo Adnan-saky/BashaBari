@@ -3,9 +3,10 @@ package com.example.bashabari;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.icu.text.DateFormat;
 import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Bundle;
@@ -18,14 +19,16 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Calendar;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class _14Notices extends AppCompatActivity {
     /////variable to store views
@@ -34,11 +37,20 @@ public class _14Notices extends AppCompatActivity {
     private EditText edit_nt_field;
     public DatabaseReference noticeRef;
 
+    private RecyclerView recyclerView;
+    private noticeViewAdapter adapter;
+    private List<noticeInfo> noticeList;
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //........................................onCreate method............................................//
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__14_notices);
 
+        //..............................recycler view for showing notices
+        noticeRecyclerView();
         //..............................getting items from xml file
         back_arrow_btn = findViewById(R.id.arrow_btn_14);
         add_notice_btn = findViewById(R.id.add_notice_btn_14);
@@ -80,6 +92,39 @@ public class _14Notices extends AppCompatActivity {
         });
     }
 
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //...................................Notice recycler view..............................................//
+    private void noticeRecyclerView() {
+        recyclerView = findViewById(R.id.notice_recyclerview_14);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        noticeList = new ArrayList<>();
+        adapter = new noticeViewAdapter(this, noticeList);
+        recyclerView.setAdapter(adapter);
+
+        Query query = FirebaseDatabase.getInstance().getReference("Notice Database")
+                .orderByChild("phone_no")
+                .equalTo(readFromFile("369pho369.txt").trim());
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                noticeList.clear();
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        noticeInfo not = snapshot.getValue(noticeInfo.class);
+                        noticeList.add(not);
+                    }
+                    adapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //..............................................Saving  info to database.....................................................
     public void saveToDatabase(final String date, final String name, final String phone_no, final String text_req) {
@@ -103,7 +148,7 @@ public class _14Notices extends AppCompatActivity {
     //...............................................getting date.............................................................
     @RequiresApi(api = Build.VERSION_CODES.N)
     private String getTodaysDate() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy 'at' h:mm a");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy 'at' h:mm a");
         Date date = new Date();
         String dateString = dateFormat.format(date);
 

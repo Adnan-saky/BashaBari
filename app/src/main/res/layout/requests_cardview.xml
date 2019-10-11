@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="5dp"
+        app:cardCornerRadius="10dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="25dp"
+            android:paddingVertical="8dp">
+
+
+            <TextView
+                android:id="@+id/name_rv_requests"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/microsoft_himalaya"
+                android:textSize="35sp"
+                android:text="Joseph Joestar"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/date_rv_requests"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/name_rv_requests"
+                android:text="11/10/2019 at 11:33 pm"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:paddingBottom="25dp"
+                android:paddingRight="30dp"/>
+
+            <TextView
+                android:id="@+id/solve_rv_requests"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/name_rv_requests"
+                android:hint="Solved: _(?)_"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="5dp"
+                />
+
+
+            <TextView
+                android:id="@+id/text_rv_requests"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/date_rv_requests"
+                android:text="This is a notice text"
+                android:textSize="18dp"
+                android:textColor="@android:color/black"
+                />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

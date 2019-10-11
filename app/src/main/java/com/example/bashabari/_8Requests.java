@@ -1,9 +1,14 @@
 package com.example.bashabari;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.icu.text.SimpleDateFormat;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -14,12 +19,16 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class _8Requests extends AppCompatActivity {
     /////variable to store views
@@ -28,11 +37,17 @@ public class _8Requests extends AppCompatActivity {
     private EditText edit_rq_field;
     public DatabaseReference requestRef;
 
+    private RecyclerView recyclerView;
+    private requestViewAdapter adapter;
+    private List<requestInfo> requestList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__08_requests);
 
+        //..............................recycler view for showing notices
+        requestRecyclerView();
         //..............................getting items from xml file
         back_arrow_btn = findViewById(R.id.back_arrow_btn_8);
         add_rq_btn = findViewById(R.id.add_rq_btn_8);
@@ -53,6 +68,7 @@ public class _8Requests extends AppCompatActivity {
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
         //..................................."Add Request" button click........................................//
         add_rq_btn.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
                 final String text_req,owner_no, phone_no, name, date, solveStat;
@@ -67,7 +83,7 @@ public class _8Requests extends AppCompatActivity {
                 //...........................If the field is not empty
                 else{
                     date = getTodaysDate();
-                    solveStat = "No";
+                    solveStat = "[Solved: No]";
                     saveToDatabase(date, name, owner_no, phone_no, solveStat, text_req);
 
                 }
@@ -75,6 +91,41 @@ public class _8Requests extends AppCompatActivity {
         });
     }
 
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //...................................Notice recycler view........................................//
+    private void requestRecyclerView() {
+        recyclerView = findViewById(R.id.request_recyclerview_8);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        requestList = new ArrayList<>();
+        adapter = new requestViewAdapter(this, requestList);
+        recyclerView.setAdapter(adapter);
+
+        Query query = FirebaseDatabase.getInstance().getReference("Requests Database")
+                .orderByChild("phone_no")
+                .equalTo(readFromFile("369pho369.txt").trim());
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                requestList.clear();
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        requestInfo req = snapshot.getValue(requestInfo.class);
+                        requestList.add(req);
+                    }
+                    adapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //..............................................Saving  info to database.....................................................
     public void saveToDatabase(final String date, final String name, final String owner_no, final String phone_no, final String solveStat, final String text_req) {
 
                 requestRef.child(phone_no).addValueEventListener(new ValueEventListener() {
@@ -92,10 +143,15 @@ public class _8Requests extends AppCompatActivity {
                 });
         }
 
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //...............................................getting date.............................................................
+    @RequiresApi(api = Build.VERSION_CODES.N)
     private String getTodaysDate() {
-        String date=null;
-        //function for retrieving date yet not written
-        return date;
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy 'at' h:mm a");
+        Date date = new Date();
+        String dateString = dateFormat.format(date);
+
+        return dateString;
     }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

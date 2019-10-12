@@ -48,7 +48,7 @@ public class _8Requests extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__08_requests);
 
-        //..............................recycler view for showing notices
+        //..............................recycler view for showing requests
         requestRecyclerView();
         //..............................getting items from xml file
         back_arrow_btn = findViewById(R.id.back_arrow_btn_8);
@@ -94,7 +94,7 @@ public class _8Requests extends AppCompatActivity {
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //...................................Notice recycler view........................................//
+    //...................................Request recycler view........................................//
     private void requestRecyclerView() {
         recyclerView = findViewById(R.id.request_recyclerview_8);
         recyclerView.setHasFixedSize(true);

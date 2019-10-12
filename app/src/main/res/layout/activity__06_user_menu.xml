@@ -107,7 +107,7 @@
             android:layout_below="@+id/nameTitle_6"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/futura_md_bt"
-            android:paddingBottom="20sp"
+
             android:text="..................."
             android:textSize="18sp" />
 
@@ -194,41 +194,20 @@
             android:text="RECENT "
             android:textSize="28sp" />
 
-
-
-        <ImageView
-            android:id="@+id/msg_box"
-            android:layout_width="270dp"
-            android:layout_height="130dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/notice_recyclerview_6"
+            android:layout_width="320dp"
+            android:layout_height="150dp"
             android:layout_below="@+id/recent_text"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/rectangle" />
 
-        <TextView
-            android:id="@+id/owner_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/recent_text"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="@font/microsoft_himalaya"
-            android:paddingTop="15sp"
-            android:text="Joseph Joestar"
-            android:textSize="35sp" />
-
-        <TextView
-            android:id="@+id/text_content"
-            android:layout_width="200sp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/owner_name"
-            android:layout_centerHorizontal="true"
-            android:text="@string/user_home_5"
-            android:textSize="15dp" />
+            />
 
         <ImageView
             android:id="@+id/see_more_6"
             android:layout_width="150dp"
             android:layout_height="60dp"
-            android:layout_below="@+id/msg_box"
+            android:layout_below="@+id/notice_recyclerview_6"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:src="@drawable/see_more_btn" />

@@ -1,7 +1,10 @@
 package com.example.bashabari;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Build;
@@ -12,11 +15,19 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class _11OwnerMenu extends AppCompatActivity {
     //.......................creating a object to hold the id of the contents of layout 11
@@ -25,6 +36,10 @@ public class _11OwnerMenu extends AppCompatActivity {
     private ImageView menu_btn, see_more_btn;
     private TextView add_tenant_btn, notices_btn, manage_tenant_btn,send_bills_btn,settings_btn,signout_btn;
     private TextView name_title, address_title;
+
+    private RecyclerView recyclerView;
+    private requestViewAdapter adapter;
+    private List<requestInfo> requestList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +62,9 @@ public class _11OwnerMenu extends AppCompatActivity {
         send_bills_btn = findViewById(R.id.send_bills_btn_11);
         settings_btn = findViewById(R.id.settings_btn_11);
         signout_btn = findViewById(R.id.signout_11);
+
+        //..............................recycler view for showing requests
+        requestRecyclerView();
 
         //...........................for showing name and address
         setContentFromDatabase();
@@ -137,6 +155,40 @@ public class _11OwnerMenu extends AppCompatActivity {
             }
         });
 
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //...................................Request recycler view........................................//
+    private void requestRecyclerView() {
+        recyclerView = findViewById(R.id.request_recyclerview_11);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        requestList = new ArrayList<>();
+        adapter = new requestViewAdapter(this, requestList);
+        recyclerView.setAdapter(adapter);
+
+        Query query = FirebaseDatabase.getInstance().getReference("Requests Database")
+                .orderByChild("owner").limitToLast(1)
+                .equalTo(readFromFile("369pho369.txt").trim());
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                requestList.clear();
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        requestInfo req = snapshot.getValue(requestInfo.class);
+                        requestList.add(req);
+                    }
+                    adapter.notifyDataSetChanged();
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

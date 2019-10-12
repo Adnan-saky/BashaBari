@@ -41,20 +41,20 @@
         android:layout_height="100sp"
         android:layout_below="@+id/notice_text2"
         android:fontFamily="@font/futura_md_cn_bt"
-        android:hint="Sample text"
+        android:hint="    Write your notice in short"
         android:textSize="20sp"
         android:gravity="bottom"
         android:background="@drawable/rectangle"
         android:padding="10sp"
         />
-    <TextView
+    <!--<TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edit_notice_box_14"
         android:paddingLeft="10sp"
         android:text="11/150"
         android:textColor="@android:color/darker_gray"
-        />
+        />-->
     <ImageView
         android:id="@+id/add_notice_btn_14"
         android:layout_width="150sp"

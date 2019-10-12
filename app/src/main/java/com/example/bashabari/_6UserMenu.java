@@ -1,7 +1,10 @@
 package com.example.bashabari;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Build;
@@ -12,11 +15,19 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class _6UserMenu extends AppCompatActivity {
     //..................creating a object to hold the id of the contents of layout 6
@@ -27,6 +38,10 @@ public class _6UserMenu extends AppCompatActivity {
     private TextView bill_6;
     private TextView request_6, signout_btn;
     private TextView name_title, address_title;
+
+    private RecyclerView recyclerView;
+    private noticeViewAdapter adapter;
+    private List<noticeInfo> noticeList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +63,8 @@ public class _6UserMenu extends AppCompatActivity {
         //.............this method is for showing name and address
         setContentFromDatabase();
 
+        //..............................recycler view for showing notices
+        noticeRecyclerView();
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
         //......................................menu button click...............................................//
         menu_btn.setOnClickListener(new View.OnClickListener() {
@@ -112,6 +129,39 @@ public class _6UserMenu extends AppCompatActivity {
 
     }
 
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //...................................Notice recycler view..............................................//
+    private void noticeRecyclerView() {
+        recyclerView = findViewById(R.id.notice_recyclerview_6);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        noticeList = new ArrayList<>();
+        adapter = new noticeViewAdapter(this, noticeList);
+        recyclerView.setAdapter(adapter);
+
+        Query query = FirebaseDatabase.getInstance().getReference("Notice Database")
+                .orderByChild("phone_no").limitToLast(1)
+                .equalTo(readFromFile("369t_ow369.txt").trim());
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                noticeList.clear();
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        noticeInfo not = snapshot.getValue(noticeInfo.class);
+                        noticeList.add(not);
+                    }
+                    adapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //.....................................this method is for showing name and address............................................//

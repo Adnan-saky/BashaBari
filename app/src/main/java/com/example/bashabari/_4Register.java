@@ -23,7 +23,7 @@ public class _4Register extends AppCompatActivity {
     //...............................variable declaration for views
     private ImageView next_btn;
     private TextView back_login_btn;
-    DatabaseReference ownerReference;
+    private DatabaseReference ownerReference;
     private EditText Name, Address, Nid_no, Phone_no, Password;
 
     //..................................on create

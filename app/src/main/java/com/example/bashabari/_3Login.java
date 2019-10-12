@@ -41,8 +41,8 @@ public class _3Login extends AppCompatActivity {
     public TextView registerButton;
     public ImageView next_btn_3;
     private CheckBox login_as_owner_3;
-    public DatabaseReference ownerRef;
-    public DatabaseReference tenantRef;
+    private DatabaseReference ownerRef;
+    private DatabaseReference tenantRef;
 
     //.................................on create
     @Override

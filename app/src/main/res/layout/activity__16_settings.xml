@@ -20,17 +20,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginTop="10sp"
         android:src="@drawable/arrow_btn" />
-    <TextView
-        android:id="@+id/centerbox"
-        android:layout_width="50sp"
-        android:layout_height="500sp"
-        android:text="            "
-        android:textSize="70sp"
-        android:fontFamily="@font/microsoft_himalaya"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:paddingTop="80sp"
-        />
+
     <TextView
         android:id="@+id/header_text_16"
         android:layout_width="wrap_content"
@@ -39,12 +29,13 @@
         android:textSize="50sp"
         android:fontFamily="@font/microsoft_himalaya"
         android:layout_centerHorizontal="true"
+        android:paddingBottom="15dp"
         />
     <ImageView
         android:background="@drawable/register_bg"
         android:id="@+id/register_bg"
         android:layout_width="match_parent"
-        android:layout_height="510sp"
+        android:layout_height="450sp"
         android:layout_below="@+id/header_text_16"
         />
     <LinearLayout
@@ -110,23 +101,7 @@
             android:hint="example"
 
             />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Phone no :"
-            android:textSize="25sp"
-            android:fontFamily="@font/microsoft_himalaya"
-            />
 
-        <EditText
-            android:id="@+id/reg_Phn_no_16"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20sp"
-            android:textSize="25sp"
-            android:fontFamily="@font/microsoft_himalaya"
-            android:hint="017XXXXXXXX"
-            />
 
         <TextView
             android:layout_width="match_parent"
@@ -142,13 +117,12 @@
             android:layout_marginBottom="25sp"
             android:textSize="25sp"
             android:fontFamily="@font/microsoft_himalaya"
-            android:inputType="textPassword"
             android:hint="*********"
 
             />
     </LinearLayout>
     <ImageView
-        android:id="@+id/nextbtn"
+        android:id="@+id/tick_btn_16"
         android:layout_width="100sp"
         android:layout_height="100sp"
         android:layout_alignParentBottom="true"

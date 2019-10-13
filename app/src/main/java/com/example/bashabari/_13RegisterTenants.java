@@ -56,6 +56,7 @@ public class _13RegisterTenants extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent12 = new Intent(_13RegisterTenants.this, _11OwnerMenu.class);
                 startActivity(intent12);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -120,6 +121,7 @@ public class _13RegisterTenants extends AppCompatActivity {
                     public void run() {
                         Intent intent = new Intent(_13RegisterTenants.this, _13RegisterTenants.class);
                         startActivity(intent);
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                         swipeRefreshLayout.setRefreshing(false);
                     }
                 }, 1000);
@@ -151,6 +153,7 @@ public class _13RegisterTenants extends AppCompatActivity {
 
                         Intent intent1 = new Intent(_13RegisterTenants.this, _11OwnerMenu.class);
                         startActivity(intent1);
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                     }
                 }
                 @Override

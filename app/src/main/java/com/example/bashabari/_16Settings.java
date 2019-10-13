@@ -57,6 +57,7 @@ public class _16Settings extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent12 = new Intent(_16Settings.this, _11OwnerMenu.class);
                 startActivity(intent12);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -84,6 +85,7 @@ public class _16Settings extends AppCompatActivity {
                     public void run() {
                         Intent intent = new Intent(_16Settings.this, _16Settings.class);
                         startActivity(intent);
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                         swipeRefreshLayout.setRefreshing(false);
                     }
                 }, 1000);
@@ -147,6 +149,7 @@ public class _16Settings extends AppCompatActivity {
 
                             Intent intent = new Intent(_16Settings.this, _11OwnerMenu.class);
                             startActivity(intent);
+                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                         }
 
                     } catch (Exception e) {

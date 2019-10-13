@@ -23,6 +23,7 @@ public class _2Welcome extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent2 = new Intent(_2Welcome.this, _3Login.class);
                 startActivity(intent2);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 

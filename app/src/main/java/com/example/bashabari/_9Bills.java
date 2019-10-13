@@ -26,6 +26,7 @@ public class _9Bills extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent9 = new Intent(_9Bills.this, _6UserMenu.class);
                 startActivity(intent9);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -41,6 +42,7 @@ public class _9Bills extends AppCompatActivity {
                     public void run() {
                         Intent intent = new Intent(_9Bills.this, _9Bills.class);
                         startActivity(intent);
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                         swipeRefreshLayout.setRefreshing(false);
                     }
                 }, 1000);

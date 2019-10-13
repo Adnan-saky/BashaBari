@@ -15,7 +15,7 @@ import java.io.InputStreamReader;
 
 public class _0loading extends AppCompatActivity {
 
-    private static int loadingtime=5000;
+    private static int loadingtime=4500;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,14 +42,17 @@ public class _0loading extends AppCompatActivity {
             if (cond.equals("logged_out".trim())) {
                 Intent loading = new Intent(_0loading.this, _3Login.class);
                 startActivity(loading);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
             else if (cond.equals("logged_in_owner".trim())) {
                 Intent loading = new Intent(_0loading.this, _11OwnerMenu.class);
                 startActivity(loading);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
             else if (cond.equals("logged_in_tenant".trim())) {
                 Intent loading = new Intent(_0loading.this, _6UserMenu.class);
                 startActivity(loading);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
 
         }catch (Exception e){

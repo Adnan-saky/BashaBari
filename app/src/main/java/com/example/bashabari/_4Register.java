@@ -139,6 +139,7 @@ public class _4Register extends AppCompatActivity {
 
                         Intent intent1 = new Intent(_4Register.this, _3Login.class);
                         startActivity(intent1);
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                     }
                 }
                 @Override

@@ -49,6 +49,7 @@ public class _7MoreNotices extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent7 = new Intent(_7MoreNotices.this, _6UserMenu.class);
                 startActivity(intent7);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -63,6 +64,7 @@ public class _7MoreNotices extends AppCompatActivity {
                     public void run() {
                         Intent intent = new Intent(_7MoreNotices.this, _7MoreNotices.class);
                         startActivity(intent);
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                         swipeRefreshLayout.setRefreshing(false);
                     }
                 }, 1000);

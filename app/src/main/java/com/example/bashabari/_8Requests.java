@@ -66,6 +66,7 @@ public class _8Requests extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent8 = new Intent(_8Requests.this, _6UserMenu.class);
                 startActivity(intent8);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -105,6 +106,7 @@ public class _8Requests extends AppCompatActivity {
                     public void run() {
                         Intent intent = new Intent(_8Requests.this, _8Requests.class);
                         startActivity(intent);
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                         swipeRefreshLayout.setRefreshing(false);
                     }
                 }, 1000);

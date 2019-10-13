@@ -69,7 +69,7 @@ public class _6UserMenu extends AppCompatActivity {
         main_menu_layout_right = findViewById(R.id.main_menu_layout_6right);
         menu_btn = findViewById(R.id.menu_btn_6);
         signout_btn = findViewById(R.id.signout_6);
-        bill_6 = findViewById(R.id.bills_6);
+        /////////////////////////////////////////////////////////////////////////////////////////bill_6 = findViewById(R.id.bills_6);
         request_6 = findViewById(R.id.request_6);
         see_more_6 = findViewById(R.id.see_more_6);
         name_title= findViewById(R.id.nameTitle_6);
@@ -105,6 +105,7 @@ public class _6UserMenu extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent_6 = new Intent(_6UserMenu.this, _7MoreNotices.class);
                 startActivity(intent_6);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -113,17 +114,19 @@ public class _6UserMenu extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent_6 = new Intent(_6UserMenu.this, _8Requests.class);
                 startActivity(intent_6);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
-
+/*...............................................................................................................................
         bill_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent_06 = new Intent(_6UserMenu.this, _9Bills.class);
                 startActivity(intent_06);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
-
+............................................................................................................*/
         signout_btn.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
@@ -139,6 +142,7 @@ public class _6UserMenu extends AppCompatActivity {
 
                 Intent intent_06 = new Intent(_6UserMenu.this, _3Login.class);
                 startActivity(intent_06);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -153,6 +157,7 @@ public class _6UserMenu extends AppCompatActivity {
                     public void run() {
                         Intent intent = new Intent(_6UserMenu.this, _6UserMenu.class);
                         startActivity(intent);
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                         swipeRefreshLayout.setRefreshing(false);
                     }
                 }, 1000);

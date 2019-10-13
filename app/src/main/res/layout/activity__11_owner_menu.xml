@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/futura_md_bt"
                 android:padding="20sp"
-                android:text="Manage Tenant"
+                android:text="Tenant List"
                 android:textSize="35sp" />
             <!--
                         <TextView

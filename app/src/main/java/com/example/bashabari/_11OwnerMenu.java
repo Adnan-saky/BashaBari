@@ -110,6 +110,7 @@ public class _11OwnerMenu extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent11 = new Intent(_11OwnerMenu.this, _13RegisterTenants.class);
                 startActivity(intent11);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -118,6 +119,7 @@ public class _11OwnerMenu extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent11 = new Intent(_11OwnerMenu.this, _14Notices.class);
                 startActivity(intent11);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -126,6 +128,7 @@ public class _11OwnerMenu extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent11 = new Intent(_11OwnerMenu.this, _17ManageTenants.class);
                 startActivity(intent11);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -150,6 +153,7 @@ public class _11OwnerMenu extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent11 = new Intent(_11OwnerMenu.this, _12MoreRequests.class);
                 startActivity(intent11);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -168,6 +172,7 @@ public class _11OwnerMenu extends AppCompatActivity {
 
                 Intent intent11 = new Intent(_11OwnerMenu.this, _3Login.class);
                 startActivity(intent11);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -182,6 +187,7 @@ public class _11OwnerMenu extends AppCompatActivity {
                     public void run() {
                         Intent intent = new Intent(_11OwnerMenu.this, _11OwnerMenu.class);
                         startActivity(intent);
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                         swipeRefreshLayout.setRefreshing(false);
                     }
                 }, 1000);

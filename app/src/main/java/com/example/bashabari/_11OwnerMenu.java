@@ -137,6 +137,7 @@ public class _11OwnerMenu extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent11 = new Intent(_11OwnerMenu.this, _15SendBills.class);
                 startActivity(intent11);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
 
@@ -145,6 +146,7 @@ public class _11OwnerMenu extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent11 = new Intent(_11OwnerMenu.this, _16Settings.class);
                 startActivity(intent11);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -83,6 +83,7 @@ public class _3Login extends AppCompatActivity {
                 if (login_as_owner_3.isChecked()) {
                     Intent intent3 = new Intent(_3Login.this, _4Register.class);
                     startActivity(intent3);
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 }
                 else
                     Toast.makeText(_3Login.this, "You can only register as an owner", Toast.LENGTH_LONG).show();
@@ -134,6 +135,7 @@ public class _3Login extends AppCompatActivity {
                         public void run() {
                             Intent intent = new Intent(_3Login.this, _3Login.class);
                             startActivity(intent);
+                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                             swipeRefreshLayout.setRefreshing(false);
                         }
                     }, 1000);
@@ -164,6 +166,7 @@ public class _3Login extends AppCompatActivity {
 
                             Intent intent_3 = new Intent(_3Login.this, _11OwnerMenu.class);
                             startActivity(intent_3);
+                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
                             //loading condition for owner(written in the file)
                             FileOutputStream fos0 = null;
@@ -214,6 +217,7 @@ public class _3Login extends AppCompatActivity {
 
                             Intent intent_3 = new Intent(_3Login.this, _6UserMenu.class);
                             startActivity(intent_3);
+                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
                             //loading condition for tenant (written in the file)
                             FileOutputStream fos0 = null;

@@ -2,10 +2,12 @@ package com.example.bashabari;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -94,6 +96,23 @@ public class _4Register extends AppCompatActivity {
                         Phone_no.setError("Input your phone number");
                 }
 
+            }
+        });
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //........................................Refreshing method............................................//
+        final SwipeRefreshLayout swipeRefreshLayout = findViewById(R.id.page_layout_4);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                swipeRefreshLayout.setRefreshing(true);
+                (new Handler()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent(_4Register.this, _4Register.class);
+                        startActivity(intent);
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
+                }, 1000);
             }
         });
     }

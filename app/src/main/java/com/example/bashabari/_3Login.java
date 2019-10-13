@@ -2,6 +2,7 @@ package com.example.bashabari;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -11,6 +12,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
@@ -117,6 +119,23 @@ public class _3Login extends AppCompatActivity {
                     else
                         tenantLogin(getPhoneKey, getPass);
                 }
+            }
+        });
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //........................................Refreshing method............................................//
+        final SwipeRefreshLayout swipeRefreshLayout = findViewById(R.id.page_layout_3);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                swipeRefreshLayout.setRefreshing(true);
+                (new Handler()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent(_3Login.this, _3Login.class);
+                        startActivity(intent);
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
+                }, 1000);
             }
         });
     }

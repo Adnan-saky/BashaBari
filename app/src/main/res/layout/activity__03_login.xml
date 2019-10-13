@@ -1,133 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@drawable/login_bg"
-    android:padding="35sp">
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/page_layout_3">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="@drawable/login_bg"
+        android:padding="35sp">
 
-    <FrameLayout
-        android:id="@+id/hide_keyboard"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:onClick="hidekeyboard" >
-    </FrameLayout>
-
-
-    <ImageView
-        android:id="@+id/back_arrow_btn__3"
-        android:layout_width="40sp"
-        android:layout_height="40sp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="10sp"
-          />
-
-    <TextView
-        android:id="@+id/loginTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:textSize="70sp"
-        android:fontFamily="@font/microsoft_himalaya"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="70sp"
-
-        />
-
-
-    <ImageView
-        android:id="@+id/next_btn_3"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:src="@drawable/next_button"
-        android:layout_marginBottom="30sp"/>
-
-    <ImageView
-        android:background="@drawable/register_bg"
-        android:id="@+id/login_bg"
-        android:layout_width="match_parent"
-        android:layout_height="300sp"
-        android:layout_below="@+id/loginTxt"
-        />
-
-    <!--:::::::::::::::::::::::Inside Contents:::::::::::::::::::::::-->
-    <LinearLayout
-        android:id="@+id/login_box"
-        android:layout_below="@+id/loginTxt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="25dp"
-        android:orientation="vertical"
-        >
-        <TextView
+        <FrameLayout
+            android:id="@+id/hide_keyboard"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Phone NO :"
-            android:textSize="35sp"
+            android:layout_height="match_parent"
+            android:onClick="hidekeyboard" >
+        </FrameLayout>
 
-            android:fontFamily="@font/microsoft_himalaya"
-            />
 
-        <EditText
-            android:id="@+id/phone_no_3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20sp"
-            android:textSize="30sp"
-            android:numeric="integer"
-            android:fontFamily="@font/microsoft_himalaya"
-            android:hint="example"
-            />
+        <ImageView
+            android:id="@+id/back_arrow_btn__3"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10sp"
+              />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Password :"
-            android:textSize="35sp"
-            android:fontFamily="@font/microsoft_himalaya"
-            />
-        <EditText
-            android:id="@+id/password__3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="25sp"
-            android:textSize="25sp"
-            android:fontFamily="@font/microsoft_himalaya"
-            android:inputType="textPassword"
-            android:hint="*********"
-
-            />
-
-        <CheckBox
-            android:id="@+id/login_as_owner_3"
+            android:id="@+id/loginTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login as home owner"
-            android:textSize="28sp"
+            android:text="Login"
+            android:textSize="70sp"
             android:fontFamily="@font/microsoft_himalaya"
-            />
-    </LinearLayout>
-<TextView
+            android:layout_centerHorizontal="true"
+            android:paddingTop="70sp"
 
-    android:id="@+id/qstn"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Don't have an account?"
-    android:textSize="18sp"
-    android:layout_centerHorizontal="true"
-    android:layout_below="@+id/login_box"
-    android:padding="8sp"
-    >
-</TextView>
+            />
+
+
+        <ImageView
+            android:id="@+id/next_btn_3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/next_button"
+            android:layout_marginBottom="30sp"/>
+
+        <ImageView
+            android:background="@drawable/register_bg"
+            android:id="@+id/login_bg"
+            android:layout_width="match_parent"
+            android:layout_height="300sp"
+            android:layout_below="@+id/loginTxt"
+            />
+
+        <!--:::::::::::::::::::::::Inside Contents:::::::::::::::::::::::-->
+        <LinearLayout
+            android:id="@+id/login_box"
+            android:layout_below="@+id/loginTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="25dp"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phone NO :"
+                android:textSize="35sp"
+
+                android:fontFamily="@font/microsoft_himalaya"
+                />
+
+            <EditText
+                android:id="@+id/phone_no_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20sp"
+                android:textSize="30sp"
+                android:numeric="integer"
+                android:fontFamily="@font/microsoft_himalaya"
+                android:hint="example"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Password :"
+                android:textSize="35sp"
+                android:fontFamily="@font/microsoft_himalaya"
+                />
+            <EditText
+                android:id="@+id/password__3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25sp"
+                android:textSize="25sp"
+                android:fontFamily="@font/microsoft_himalaya"
+                android:inputType="textPassword"
+                android:hint="*********"
+
+                />
+
+            <CheckBox
+                android:id="@+id/login_as_owner_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login as home owner"
+                android:textSize="28sp"
+                android:fontFamily="@font/microsoft_himalaya"
+                />
+        </LinearLayout>
     <TextView
-        android:id="@+id/register"
+
+        android:id="@+id/qstn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register "
-        android:textSize="20sp"
-        android:textColor="#F10E0E"
+        android:text="Don't have an account?"
+        android:textSize="18sp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/qstn"
+        android:layout_below="@+id/login_box"
+        android:padding="8sp"
         >
     </TextView>
-</RelativeLayout>
+        <TextView
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register "
+            android:textSize="20sp"
+            android:textColor="#F10E0E"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/qstn"
+            >
+        </TextView>
+    </RelativeLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

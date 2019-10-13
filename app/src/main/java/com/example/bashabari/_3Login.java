@@ -123,21 +123,29 @@ public class _3Login extends AppCompatActivity {
         });
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
         //........................................Refreshing method............................................//
-        final SwipeRefreshLayout swipeRefreshLayout = findViewById(R.id.page_layout_3);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                swipeRefreshLayout.setRefreshing(true);
-                (new Handler()).postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        Intent intent = new Intent(_3Login.this, _3Login.class);
-                        startActivity(intent);
-                        swipeRefreshLayout.setRefreshing(false);
-                    }
-                }, 1000);
-            }
-        });
+        try {
+            final SwipeRefreshLayout swipeRefreshLayout = findViewById(R.id.page_layout_3);
+            swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+                @Override
+                public void onRefresh() {
+                    swipeRefreshLayout.setRefreshing(true);
+                    (new Handler()).postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent intent = new Intent(_3Login.this, _3Login.class);
+                            startActivity(intent);
+                            swipeRefreshLayout.setRefreshing(false);
+                        }
+                    }, 1000);
+                }
+            });
+
+        }
+        catch (Exception e)
+        {
+
+        }
+
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -303,16 +311,16 @@ public class _3Login extends AppCompatActivity {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(c);
         builder.setTitle("No Internet Connection");
-        builder.setMessage("You need to have Mobile Data or wifi to access this. Press ok to Exit");
+        builder.setMessage("You need to have Mobile Data or wifi to access this.");
 
-        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+        //builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
+         //   @Override
+          //  public void onClick(DialogInterface dialog, int which) {
 
-                finish();
-            }
-        });
+            //    finish();
+            //}
+       // });
 
         return builder;
     }

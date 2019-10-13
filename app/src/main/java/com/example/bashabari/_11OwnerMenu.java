@@ -293,9 +293,9 @@ public class _11OwnerMenu extends AppCompatActivity {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(c);
         builder.setTitle("No Internet Connection");
-        builder.setMessage("You need to have Mobile Data or wifi to access this. Press ok to Exit");
+        builder.setMessage("You need to have Mobile Data or wifi to access this. ");
 
-        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+       /* builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -303,7 +303,7 @@ public class _11OwnerMenu extends AppCompatActivity {
                 finish();
             }
         });
-
+*/
         return builder;
     }
 

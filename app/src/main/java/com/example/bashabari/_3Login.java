@@ -57,11 +57,9 @@ public class _3Login extends AppCompatActivity {
 
 
         //////////////////////////no internet connection function call
-        if(!isConnected(_3Login.this)) buildDialog(_3Login.this).show();
-        else {
-            Toast.makeText(_3Login.this,"Welcome", Toast.LENGTH_SHORT).show();
+        if(!isConnected(_3Login.this))
+            buildDialog(_3Login.this).show();
 
-        }
 
 
         //getting items from xml file

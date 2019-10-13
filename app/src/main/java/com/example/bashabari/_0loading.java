@@ -21,7 +21,7 @@ public class _0loading extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__0loading);
 
-        Toast.makeText(getApplicationContext(), "please wait for a moment..", Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), "please wait for a moment..", Toast.LENGTH_LONG).show();
         new Handler().postDelayed(new Runnable() {
 
             @Override

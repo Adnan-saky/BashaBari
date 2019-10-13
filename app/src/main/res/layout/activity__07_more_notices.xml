@@ -1,34 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/page_layout_7">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent" android:layout_height="match_parent"
 
-    android:background="@drawable/bg"
-    android:padding="35sp">
+        android:background="@drawable/bg"
+        android:padding="35sp">
 
-    <!--::::::::::::::::::::::::::::::::::Arrow:::::::::::::::::::::::::::::::-->
-    <ImageView
-        android:layout_width="50sp"
-        android:layout_height="50sp"
-        android:src="@drawable/arrow_btn"
-        android:id="@+id/back_arrow_btn_7"
-        />
+        <!--::::::::::::::::::::::::::::::::::Arrow:::::::::::::::::::::::::::::::-->
+        <ImageView
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:src="@drawable/arrow_btn"
+            android:id="@+id/back_arrow_btn_7"
+            />
 
-    <TextView
-        android:id="@+id/notice_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Notices"
-        android:textSize="60sp"
-        android:fontFamily="@font/microsoft_himalaya"
-        android:layout_centerHorizontal="true"
-        android:paddingBottom="15sp"
-        />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/notice_recyclerview_7"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/notice_text"
-        android:padding="20dp"
-         />
+        <TextView
+            android:id="@+id/notice_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notices"
+            android:textSize="60sp"
+            android:fontFamily="@font/microsoft_himalaya"
+            android:layout_centerHorizontal="true"
+            android:paddingBottom="15sp"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/notice_recyclerview_7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/notice_text"
+            android:padding="20dp"
+             />
 
-</RelativeLayout>
+    </RelativeLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

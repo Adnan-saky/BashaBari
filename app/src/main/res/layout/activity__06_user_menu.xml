@@ -1,216 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@drawable/bg"
-    android:id="@+id/main_menu_layout_6right"
-    >
-
-    <!--::::::::::::::::::::::::::Menu Screen::::::::::::::::::::::::::-->
-    <LinearLayout
-        android:id="@+id/main_menu_layout_6"
-        android:layout_width="400sp"
-        android:layout_height="match_parent"
-        android:background="@drawable/menu_bg"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/futura_md_cn_bt"
-            android:paddingTop="80sp"
-            android:paddingBottom="90sp"
-            android:text="HOME"
-            android:textSize="70sp" />
-
-        <TextView
-            android:id="@+id/bills_6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/futura_md_bt"
-            android:padding="20sp"
-            android:text="Bills"
-            android:textSize="40sp" />
-
-        <TextView
-            android:id="@+id/request_6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/futura_md_bt"
-            android:padding="20sp"
-            android:text="Requests"
-            android:textSize="40sp" />
-
-        <TextView
-            android:id="@+id/signout_6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/futura_md_bt"
-            android:padding="20sp"
-            android:text="Sign Out"
-            android:textSize="40sp" />
-
-    </LinearLayout>
-
-    <!--::::::::::::::::::::::::::Home Screen::::::::::::::::::::::::::-->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="35sp"
-        android:id="@+id/home_layout_6"
-        android:visibility="visible"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/page_layout_6">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="@drawable/bg"
+        android:id="@+id/main_menu_layout_6right"
         >
-        <!--::::::::::::::::::::::::::Menu Button::::::::::::::::::::::::::-->
-        <ImageView
-            android:id="@+id/menu_btn_6"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/menu_btn" />
 
-        <!--::::::::::::::::::::::::::tenant text:::::::::::::::::::::::::::-->
-        <TextView
-            android:id="@+id/tenanttext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="@font/futura_md_bt"
-            android:paddingBottom="20sp"
-            android:text="Tenant"
-            android:textSize="20sp" />
-        <!--:::::::::::::::::::::::::::Profile picture;:::::::::::::::::::::-->
-        <ImageView
-            android:id="@+id/tenant_profile_pic"
-            android:layout_width="100sp"
-            android:layout_height="100sp"
-            android:layout_below="@+id/tenanttext"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/profile_pic"
-            android:layout_marginBottom="15sp"/>
-
-        <!--:::::::::::::::::::::tenant name::::::::::::::::::::::::-->
-        <TextView
-            android:id="@+id/nameTitle_6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tenant_profile_pic"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="@font/futura_md_bt"
-            android:paddingTop="10sp"
-            android:text=".........................."
-            android:textSize="30sp" />
-        <!--:::::::::::::::::::::Address::::::::::::::::::::::::-->
-        <TextView
-            android:id="@+id/addressTitle_6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/nameTitle_6"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="@font/futura_md_bt"
-
-            android:text="..................."
-            android:textSize="18sp" />
-
-        <!--:::::::::::::::::::::info box::::::::::::::::::::::::-->
-
-        <ImageView
-            android:id="@+id/info_bg"
-            android:layout_width="match_parent"
-            android:layout_height="100sp"
-            android:layout_below="@+id/addressTitle_6"
-            android:src="@drawable/home_info_bg" />
+        <!--::::::::::::::::::::::::::Menu Screen::::::::::::::::::::::::::-->
         <LinearLayout
-            android:id="@+id/info_nos"
-            android:layout_width="match_parent"
-            android:layout_height="50sp"
-            android:layout_below="@+id/addressTitle_6"
+            android:id="@+id/main_menu_layout_6"
+            android:layout_width="400sp"
+            android:layout_height="match_parent"
+            android:background="@drawable/menu_bg"
             android:gravity="center_horizontal"
-            android:paddingTop="10sp">
+            android:orientation="vertical"
+            android:visibility="gone">
 
             <TextView
-                android:id="@+id/due_bills_no"
-                android:layout_width="170sp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/nameTitle_6"
-                android:fontFamily="@font/microsoft_himalaya"
-                android:gravity="center_horizontal"
-                android:text="3"
-                android:textSize="45sp" />
+                android:fontFamily="@font/futura_md_cn_bt"
+                android:paddingTop="80sp"
+                android:paddingBottom="90sp"
+                android:text="HOME"
+                android:textSize="70sp" />
 
             <TextView
-                android:id="@+id/notice_no"
-                android:layout_width="170sp"
+                android:id="@+id/bills_6"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/nameTitle_6"
-                android:fontFamily="@font/microsoft_himalaya"
-                android:gravity="center_horizontal"
-                android:text="38"
-                android:textSize="45sp" />
+                android:fontFamily="@font/futura_md_bt"
+                android:padding="20sp"
+                android:text="Bills"
+                android:textSize="40sp" />
+
+            <TextView
+                android:id="@+id/request_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/futura_md_bt"
+                android:padding="20sp"
+                android:text="Requests"
+                android:textSize="40sp" />
+
+            <TextView
+                android:id="@+id/signout_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/futura_md_bt"
+                android:padding="20sp"
+                android:text="Sign Out"
+                android:textSize="40sp" />
+
         </LinearLayout>
 
-
-
-        <LinearLayout
-            android:id="@+id/due_notice_no"
+        <!--::::::::::::::::::::::::::Home Screen::::::::::::::::::::::::::-->
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="55sp"
-            android:layout_below="@+id/info_nos"
-            android:gravity="center_horizontal">
+            android:layout_height="match_parent"
+            android:padding="35sp"
+            android:id="@+id/home_layout_6"
+            android:visibility="visible"
+            >
+            <!--::::::::::::::::::::::::::Menu Button::::::::::::::::::::::::::-->
+            <ImageView
+                android:id="@+id/menu_btn_6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/menu_btn" />
 
+            <!--::::::::::::::::::::::::::tenant text:::::::::::::::::::::::::::-->
             <TextView
-                android:id="@+id/due_bill_text"
-                android:layout_width="170sp"
+                android:id="@+id/tenanttext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/futura_md_bt"
+                android:paddingBottom="20sp"
+                android:text="Tenant"
+                android:textSize="20sp" />
+            <!--:::::::::::::::::::::::::::Profile picture;:::::::::::::::::::::-->
+            <ImageView
+                android:id="@+id/tenant_profile_pic"
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:layout_below="@+id/tenanttext"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/profile_pic"
+                android:layout_marginBottom="15sp"/>
+
+            <!--:::::::::::::::::::::tenant name::::::::::::::::::::::::-->
+            <TextView
+                android:id="@+id/nameTitle_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tenant_profile_pic"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/futura_md_bt"
+                android:paddingTop="10sp"
+                android:text=".........................."
+                android:textSize="30sp" />
+            <!--:::::::::::::::::::::Address::::::::::::::::::::::::-->
+            <TextView
+                android:id="@+id/addressTitle_6"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/nameTitle_6"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/futura_md_bt"
+
+                android:text="..................."
+                android:textSize="18sp" />
+
+            <!--:::::::::::::::::::::info box::::::::::::::::::::::::-->
+
+            <ImageView
+                android:id="@+id/info_bg"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:layout_below="@+id/addressTitle_6"
+                android:src="@drawable/home_info_bg" />
+            <LinearLayout
+                android:id="@+id/info_nos"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_below="@+id/addressTitle_6"
                 android:gravity="center_horizontal"
-                android:text="Due bills"
-                android:textSize="20sp" />
+                android:paddingTop="10sp">
+
+                <TextView
+                    android:id="@+id/due_bills_no"
+                    android:layout_width="170sp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameTitle_6"
+                    android:fontFamily="@font/microsoft_himalaya"
+                    android:gravity="center_horizontal"
+                    android:text="3"
+                    android:textSize="45sp" />
+
+                <TextView
+                    android:id="@+id/notice_no"
+                    android:layout_width="170sp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameTitle_6"
+                    android:fontFamily="@font/microsoft_himalaya"
+                    android:gravity="center_horizontal"
+                    android:text="38"
+                    android:textSize="45sp" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/due_notice_no"
+                android:layout_width="match_parent"
+                android:layout_height="55sp"
+                android:layout_below="@+id/info_nos"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/due_bill_text"
+                    android:layout_width="170sp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameTitle_6"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/futura_md_bt"
+                    android:gravity="center_horizontal"
+                    android:text="Due bills"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/notice_text"
+                    android:layout_width="170sp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameTitle_6"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/futura_md_bt"
+                    android:gravity="center_horizontal"
+                    android:text="Notices"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <!--:::::::::::::::::::: :Recent text ::::::::::::::::::::::::-->
 
             <TextView
-                android:id="@+id/notice_text"
-                android:layout_width="170sp"
+                android:id="@+id/recent_text"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/nameTitle_6"
+                android:layout_below="@+id/info_bg"
                 android:layout_centerHorizontal="true"
-                android:fontFamily="@font/futura_md_bt"
-                android:gravity="center_horizontal"
-                android:text="Notices"
-                android:textSize="20sp" />
-        </LinearLayout>
+                android:fontFamily="@font/futura_md_cn_bt"
+                android:paddingTop="35sp"
+                android:paddingBottom="10dp"
+                android:text="RECENT "
+                android:textSize="28sp" />
 
-        <!--:::::::::::::::::::: :Recent text ::::::::::::::::::::::::-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/notice_recyclerview_6"
+                android:layout_width="320dp"
+                android:layout_height="150dp"
+                android:layout_below="@+id/recent_text"
+                android:layout_centerHorizontal="true"
 
-        <TextView
-            android:id="@+id/recent_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/info_bg"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="@font/futura_md_cn_bt"
-            android:paddingTop="35sp"
-            android:paddingBottom="10dp"
-            android:text="RECENT "
-            android:textSize="28sp" />
+                />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/notice_recyclerview_6"
-            android:layout_width="320dp"
-            android:layout_height="150dp"
-            android:layout_below="@+id/recent_text"
-            android:layout_centerHorizontal="true"
+            <ImageView
+                android:id="@+id/see_more_6"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/notice_recyclerview_6"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/see_more_btn" />
 
-            />
-
-        <ImageView
-            android:id="@+id/see_more_6"
-            android:layout_width="150dp"
-            android:layout_height="60dp"
-            android:layout_below="@+id/notice_recyclerview_6"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/see_more_btn" />
-
-    </RelativeLayout>
-</LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

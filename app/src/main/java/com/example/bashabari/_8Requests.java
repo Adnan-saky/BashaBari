@@ -5,12 +5,14 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -89,6 +91,23 @@ public class _8Requests extends AppCompatActivity {
                     saveToDatabase(date, name, owner_no, phone_no, solveStat, text_req);
                     edit_rq_field.setText(null);
                 }
+            }
+        });
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //........................................Refreshing method............................................//
+        final SwipeRefreshLayout swipeRefreshLayout = findViewById(R.id.page_layout_8);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                swipeRefreshLayout.setRefreshing(true);
+                (new Handler()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent(_8Requests.this, _8Requests.class);
+                        startActivity(intent);
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
+                }, 1000);
             }
         });
     }

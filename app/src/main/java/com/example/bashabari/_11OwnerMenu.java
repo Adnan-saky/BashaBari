@@ -5,6 +5,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -14,6 +15,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -54,11 +56,9 @@ public class _11OwnerMenu extends AppCompatActivity {
 
 
         //////////////////////////no internet connection function call
-        if(!isConnected(_11OwnerMenu.this)) buildDialog(_11OwnerMenu.this).show();
-        else {
-            Toast.makeText(_11OwnerMenu.this,"Welcome", Toast.LENGTH_SHORT).show();
+        if(!isConnected(_11OwnerMenu.this))
+            buildDialog(_11OwnerMenu.this).show();
 
-        }
 
 
 
@@ -168,6 +168,23 @@ public class _11OwnerMenu extends AppCompatActivity {
 
                 Intent intent11 = new Intent(_11OwnerMenu.this, _3Login.class);
                 startActivity(intent11);
+            }
+        });
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //........................................Refreshing method............................................//
+        final SwipeRefreshLayout swipeRefreshLayout = findViewById(R.id.page_layout_11);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                swipeRefreshLayout.setRefreshing(true);
+                (new Handler()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent(_11OwnerMenu.this, _11OwnerMenu.class);
+                        startActivity(intent);
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
+                }, 1000);
             }
         });
 

@@ -5,6 +5,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -14,6 +15,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -55,11 +57,9 @@ public class _6UserMenu extends AppCompatActivity {
         setContentView(R.layout.activity__06_user_menu);
 
         //////////////////////////no internet connection function call
-        if(!isConnected(_6UserMenu.this)) buildDialog(_6UserMenu.this).show();
-        else {
-            Toast.makeText(_6UserMenu.this,"Welcome", Toast.LENGTH_SHORT).show();
+        if(!isConnected(_6UserMenu.this))
+            buildDialog(_6UserMenu.this).show();
 
-        }
 
 
 
@@ -139,6 +139,23 @@ public class _6UserMenu extends AppCompatActivity {
 
                 Intent intent_06 = new Intent(_6UserMenu.this, _3Login.class);
                 startActivity(intent_06);
+            }
+        });
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //........................................Refreshing method............................................//
+        final SwipeRefreshLayout swipeRefreshLayout = findViewById(R.id.page_layout_6);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                swipeRefreshLayout.setRefreshing(true);
+                (new Handler()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent(_6UserMenu.this, _6UserMenu.class);
+                        startActivity(intent);
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
+                }, 1000);
             }
         });
 

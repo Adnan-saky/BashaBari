@@ -87,7 +87,7 @@ public class _8Requests extends AppCompatActivity {
                     date = getTodaysDate();
                     solveStat = "[Solved: No]";
                     saveToDatabase(date, name, owner_no, phone_no, solveStat, text_req);
-
+                    edit_rq_field.setText(null);
                 }
             }
         });

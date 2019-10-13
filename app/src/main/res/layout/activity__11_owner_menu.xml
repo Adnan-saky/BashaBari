@@ -60,14 +60,14 @@
             android:text="Send Bills"
             android:textSize="35sp" />
 
-        <TextView
+        <!--<TextView
             android:id="@+id/settings_btn_11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/futura_md_bt"
             android:padding="20sp"
             android:text="Settings"
-            android:textSize="35sp" />
+            android:textSize="35sp" />..............................................-->
 
         <TextView
             android:id="@+id/signout_11"

@@ -60,7 +60,7 @@ public class _11OwnerMenu extends AppCompatActivity {
         notices_btn = findViewById(R.id.notices_btn_11);
         manage_tenant_btn = findViewById(R.id.manage_tenant_btn_11);
         send_bills_btn = findViewById(R.id.send_bills_btn_11);
-        settings_btn = findViewById(R.id.settings_btn_11);
+        /////////////////////////////////////////////////////////////////////////////settings_btn = findViewById(R.id.settings_btn_11);
         signout_btn = findViewById(R.id.signout_11);
 
         //..............................recycler view for showing requests
@@ -121,13 +121,13 @@ public class _11OwnerMenu extends AppCompatActivity {
             }
         });
 
-        settings_btn.setOnClickListener(new View.OnClickListener() {
+        /*settings_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent11 = new Intent(_11OwnerMenu.this, _16Settings.class);
                 startActivity(intent11);
             }
-        });
+        });*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         see_more_btn.setOnClickListener(new View.OnClickListener() {
             @Override

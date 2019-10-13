@@ -26,7 +26,7 @@ import java.io.InputStreamReader;
 
 public class _16Settings extends AppCompatActivity {
     ////creating a object to hold the id of arrow button of layout 16
-    private ImageView arrow_btn;
+    private ImageView arrow_btn, tick_button;
     private DatabaseReference ownerRef;
     private EditText reg_name, reg_address, reg_NID_NO, reg_pass;
 
@@ -36,7 +36,8 @@ public class _16Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__16_settings);
 
-        ////getting the id of arrow button of layout 13
+        ////getting the id of arrow button of layout 16
+        tick_button = findViewById(R.id.tick_btn_16);
         arrow_btn =  findViewById(R.id.arrow_btn_16);
         reg_name = findViewById(R.id.reg_name__16);
         reg_address = findViewById(R.id.reg_address__16);
@@ -55,6 +56,19 @@ public class _16Settings extends AppCompatActivity {
                 Intent intent12 = new Intent(_16Settings.this, _11OwnerMenu.class);
                 startActivity(intent12);
             }
+        });
+
+        tick_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final String name = reg_name.getText().toString().trim();
+                final String address = reg_address.getText().toString().trim();
+                final String nid_no = reg_NID_NO.getText().toString().trim();
+                final String password = reg_pass.getText().toString().trim();
+                final String phone_no = readFromFile(readFromFile("369pho369.txt").trim());
+                saveToDatabase(name, address, nid_no, phone_no, password);
+
+                }
         });
     }
 

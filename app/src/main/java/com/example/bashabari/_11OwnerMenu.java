@@ -75,8 +75,8 @@ public class _11OwnerMenu extends AppCompatActivity {
         add_tenant_btn = findViewById(R.id.add_tenant_btn_11);
         notices_btn = findViewById(R.id.notices_btn_11);
         manage_tenant_btn = findViewById(R.id.manage_tenant_btn_11);
-        send_bills_btn = findViewById(R.id.send_bills_btn_11);
-        /////////////////////////////////////////////////////////////////////////////settings_btn = findViewById(R.id.settings_btn_11);
+        ///////////////////////////////////////////////////////////////////////////////////////////send_bills_btn = findViewById(R.id.send_bills_btn_11);
+        ///////////////////////////////////////////////////////////////////////////////////////////////settings_btn = findViewById(R.id.settings_btn_11);
         signout_btn = findViewById(R.id.signout_11);
 
         //..............................recycler view for showing requests
@@ -128,8 +128,8 @@ public class _11OwnerMenu extends AppCompatActivity {
                 startActivity(intent11);
             }
         });
-
-        send_bills_btn.setOnClickListener(new View.OnClickListener() {
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /*send_bills_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent11 = new Intent(_11OwnerMenu.this, _15SendBills.class);
@@ -137,7 +137,7 @@ public class _11OwnerMenu extends AppCompatActivity {
             }
         });
 
-        /*settings_btn.setOnClickListener(new View.OnClickListener() {
+        settings_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent11 = new Intent(_11OwnerMenu.this, _16Settings.class);

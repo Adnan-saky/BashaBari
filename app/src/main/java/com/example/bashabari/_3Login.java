@@ -177,6 +177,8 @@ public class _3Login extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                         }
+                        else
+                            Toast.makeText(_3Login.this, "Invalid Phone no or Password", Toast.LENGTH_LONG).show();
 
                     } catch (Exception e) {
                         Toast.makeText(_3Login.this, "Invalid Phone no or Password", Toast.LENGTH_LONG).show();
@@ -228,6 +230,9 @@ public class _3Login extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                         }
+                        else
+                            Toast.makeText(_3Login.this, "Invalid Phone no or Password", Toast.LENGTH_LONG).show();
+
                     } catch (Exception e) {
                         Toast.makeText(_3Login.this, "Invalid Phone no or Password", Toast.LENGTH_LONG).show();
                     }

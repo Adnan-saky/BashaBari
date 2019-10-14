@@ -81,7 +81,7 @@
                 android:textSize="30sp"
                 android:numeric="integer"
                 android:fontFamily="@font/microsoft_himalaya"
-                android:hint="example"
+                android:hint="017XXXXXXXX"
                 />
 
             <TextView
